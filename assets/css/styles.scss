@@ -54,6 +54,7 @@ body {
 
 header {
   @include row(block);
+  padding: $baseMargin 0;
 }
 
 a {
@@ -140,19 +141,19 @@ header {
       margin-bottom: 0;
     }
     li:before {
+      background-repeat: no-repeat;
       content: "";
       padding-right:32px;
-      background: image-url('/img/time.png') center left no-repeat;
       font-size:20px;
     }
     .ico-time:before {
-      @include background-image('/img/time.png');
+      @include retina-image(/img/time, 22px 22px);
     }
     .ico-calendar:before {
-      @include background-image('/img/calendar.png');
+      @include retina-image(/img/calendar, 22px 22px);
     }
     .ico-map:before  {
-      @include background-image('/img/map.png');
+      @include retina-image(/img/map, 22px 22px);
     }
   }
 }
