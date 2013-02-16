@@ -94,6 +94,14 @@ class Ironweb < Sinatra::Base
             company: 'Savoir-faire Linux',
             role: :programmer,
           },
+          mysterious1: {
+            name: 'Inconnu/Unknown',
+            role: :integrator,
+          },
+          mysterious2: {
+            name: 'Inconnu/Unknown',
+            role: :integrator,
+          },
         }
       }
 
