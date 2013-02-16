@@ -11,24 +11,25 @@ fr:
     dates: Du 20 au 22 février 2013
     time: 72 heures en direct
   sections:
+    medias:
+      title: Photos et vidéos
+      menu_title: Médias
+    events:
+      title: Événements
     stream:
       title: Le stream
       ironweb_reds: Rouges
       ironweb_greens: Verts
     folks:
       title: Les gens
+      contestants: Les participants
       reds: Les rouges
       greens: Les verts
       jury: Les juges
     project:
       title: Le projet à réaliser
       text: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer quis justo a justo eleifend consequat in nec libero. Maecenas
-        justo nibh, auctor quis porttitor viverra, placerat hendrerit magna.
-        Integer nisl risus, faucibus eget porttitor porta, iaculis sit amet dolor.
-        Duis cursus, sapien at sodales condimentum, lectus libero mollis diam, et
-        pellentesque risus sapien et turpis. Cras pretium odio vitae lorem pharetra dignissim.
+        Le projet sera annnoncé autour de 9h30 le 20 février prochain!
     about:
       title: C'est quoi le Iron Web?
       text: |

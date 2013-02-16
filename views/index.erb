@@ -34,6 +34,8 @@
       <div class="half-block menu-main">
         <a href="#project"><%= t 'sections.project.title' %></a>
         <a href="#stream"><%= t 'sections.stream.title' %></a>
+        <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
+        <a href="#events"><%= t 'sections.events.title' %></a>
         <a href="#folks"><%= t 'sections.folks.title' %></a>
         <a href="#partners"><%= t 'sections.partners.title' %></a>
       </div>
@@ -86,10 +88,18 @@
         -->
       </div>
     </section>
+    <section class="feed">
+      <div class="half-block" id="medias">
+        <h2><%= t 'sections.medias.title' %></h2>
+      </div>
+      <div class="half-block" id="events">
+        <h2><%= t 'sections.events.title' %></h2>
+      </div>
+    </section>
     <section class="folks" id="folks">
       <h2><%= t 'sections.folks.title' %></h2>
 
-      <h3 class="center"><%= t 'sections.folks.reds' %></h3>
+      <h3 class="center"><%= t 'sections.folks.contestants' %></h3>
       <ul class="plain folks">
         <li>Alexandre Lefrançois
           <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
@@ -102,8 +112,6 @@
         <li>Emilie Bergeron
           <span class="about"><%= t 'roles.designer' %>, Vox CG</span></li>
       </ul>
-
-      <h3 class="center"><%= t 'sections.folks.greens' %></h3>
       <ul class="plain folks">
         <li>Gregory Eric Sanderson
           <span class="about"><%= t 'roles.programmer' %>, Avencall</span></li>

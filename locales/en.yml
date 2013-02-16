@@ -11,24 +11,25 @@ en:
     dates: February 20 to 22, 2013
     time: 72 hours live
   sections:
+    medias:
+      title: Photos and videos
+      menu_title: Medias
+    events:
+      title: Events
     stream:
       title: The stream
       ironweb_reds: Reds
       ironweb_greens: Greens
     folks:
       title: The people
+      contestants: The contestants
       reds: The reds
       greens: The greens
       jury: The jury
     project:
       title: The project
       text: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer quis justo a justo eleifend consequat in nec libero. Maecenas
-        justo nibh, auctor quis porttitor viverra, placerat hendrerit magna.
-        Integer nisl risus, faucibus eget porttitor porta, iaculis sit amet dolor.
-        Duis cursus, sapien at sodales condimentum, lectus libero mollis diam, et
-        pellentesque risus sapien et turpis. Cras pretium odio vitae lorem pharetra dignissim.
+        This year project will be annonced around 9:30 on the 20 of February!
     about:
       title: What is the Iron Web?
       text: |
