@@ -14,7 +14,7 @@
 $column: 4em;
 $gutter: 1.5em;
 $grid-columns: 12;
-$max-width: em(1088);
+$max-width: em(1080);
 
 
 /* Theme */
@@ -32,6 +32,10 @@ div.container {
 
 .half-block {
   @include span-columns(6);
+}
+
+.half-inline {
+  @include span-columns(6, inline-block);
 }
 
 .quarter-block {
@@ -64,23 +68,35 @@ p {
 
 section {
   @include row(block);
-  margin-bottom: $baseMargin * 4;
+  @include radial-gradient(50% 0, #f0f0f0 0, #ffffff 20rem);
+  padding: ($baseMargin * 4) $baseMargin * 4;
+  margin-bottom: $baseMargin;
+  border-top: 1px solid #e5e5e5;
+}
+
+h2, h3, h4 {
+  font-family: miso;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-family: miso;
-  font-weight: normal;
   font-size: 60px;
-  text-transform: uppercase;
   color: $blueLight;
   margin-bottom: $baseMargin * 3;
 }
 
 h3 {
-  font-family: miso;
-  font-weight: normal;
   font-size: 40px;
-  text-transform: uppercase;
+  color: $blueDark;
+  margin-bottom: $baseMargin;
+
+  &.center {
+    text-align: center;
+  }
+}
+
+h4 {
   color: $blueDark;
   margin-bottom: $baseMargin;
 }
@@ -98,7 +114,6 @@ header {
   margin-bottom: 0;
 
   .half-inline {
-    @include span-columns(6, inline-block);
     padding: $baseMargin;
     vertical-align: middle;
     margin-right:0;
@@ -160,18 +175,19 @@ section.about {
   color: $lightText;
 }
 
-section.judges h3 {
+.judges h4 {
   font-size:25px;
 }
 
 section.partners {
   a {
-    display: inline-block;
-    padding: $baseMargin;
+    padding: $baseMargin / 2;
+  }
+  img {
     vertical-align: middle;
   }
-
-  .secondary {
-    padding-top:$baseMargin * 2;
+  div {
+    margin-right: 0;
+    vertical-align: middle;
   }
 }

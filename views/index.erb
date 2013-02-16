@@ -62,8 +62,10 @@
         <p><%= t 'sections.about.text' %></p>
       </div>
     </section>
-    <section>
+    <section class="folks">
       <h2><%= t 'sections.folks.title' %></h2>
+
+      <h3 class="center"><%= t 'sections.folks.reds' %></h3>
       <ul class="plain folks">
         <li>Alexandre Lefrançois
           <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
@@ -75,6 +77,10 @@
           <span class="about"><%= t 'roles.integrator' %>, Nurun</span></li>
         <li>Emilie Bergeron
           <span class="about"><%= t 'roles.designer' %>, Vox CG</span></li>
+      </ul>
+
+      <h3 class="center"><%= t 'sections.folks.greens' %></h3>
+      <ul class="plain folks">
         <li>Gregory Eric Sanderson
           <span class="about"><%= t 'roles.programmer' %>, Avencall</span></li>
         <li>Jimmy Bourassa
@@ -86,41 +92,44 @@
         <li>Sylvain Bouchard
           <span class="about"><%= t 'roles.programmer' %>, Savoir-faire Linux</span></li>
       </ul>
-    </section>
-    <section class="judges">
-      <h2><%= t 'sections.jury.title' %></h2>
-      <div class="judge quarter-block">
-        <%= img '/img/jury/dgupta.jpg', alt: 'Davender Gupta' %>
-        <h3>Davender Gupta</h3>
-        <p><a href="http://twitter.com/coachdavender">@coachdavender</a></p>
-      </div>
-      <div class="judge quarter-block">
-        <%= img '/img/jury/jfournier.jpg', alt: 'Davender Gupta' %>
-        <h3>Joanne Fournier</h3>
-        <p><a href="http://twitter.com/jfournier">@jfournier</a></p>
-      </div>
-      <div class="judge quarter-block">
-        <%= img '/img/jury/sgarneau.jpg', alt: 'Davender Gupta' %>
-        <h3>Samuel Garneau</h3>
-        <p><a href="http://twitter.com/garno">@garno</a></p>
-      </div>
-      <div class="judg quarter-block">
-        <%= img '/img/jury/palalonde.jpg', alt: 'Pierre-Armand Lalonde' %>
-        <h3>Pierre-Armand Lalonde</h3>
-        <p><a href="http://twitter.com/palalonde">@palalonde</a></p>
+  
+      <h3 class="center"><%= t 'sections.folks.jury' %></h3>
+      <div class="judges">
+        <div class="judge quarter-block">
+          <%= img '/img/jury/dgupta.jpg', alt: 'Davender Gupta' %>
+          <h4>Davender Gupta</h4>
+          <p><a href="http://twitter.com/coachdavender">@coachdavender</a></p>
+        </div>
+        <div class="judge quarter-block">
+          <%= img '/img/jury/jfournier.jpg', alt: 'Davender Gupta' %>
+          <h4>Joanne Fournier</h4>
+          <p><a href="http://twitter.com/jfournier">@jfournier</a></p>
+        </div>
+        <div class="judge quarter-block">
+          <%= img '/img/jury/sgarneau.jpg', alt: 'Davender Gupta' %>
+          <h4>Samuel Garneau</h4>
+          <p><a href="http://twitter.com/garno">@garno</a></p>
+        </div>
+        <div class="judg quarter-block">
+          <%= img '/img/jury/palalonde.jpg', alt: 'Pierre-Armand Lalonde' %>
+          <h4>Pierre-Armand Lalonde</h4>
+          <p><a href="http://twitter.com/palalonde">@palalonde</a></p>
+        </div>
       </div>
     </section>
     <section class="partners">
       <h2><%= t 'sections.partners.title' %></h2>
-      <div class="half-block">
-        <a href="http://www.ville.quebec.qc.ca/"><%= img '/img/partners/quebec.png', alt: 'Ville de Québec' %></a>
-      </div>
-      <div class="half-block secondary">
-        <a href="http://webaquebec.org/"><%= img '/img/partners/waq.png', alt: 'Web à Québec' %></a>
-        <a href="http://www.bordeaux.fr/"><%= img '/img/partners/bordeau.png', alt: 'Ville de Bordeau, France' %></a>
-        <a href="http://www.eq3.com/ca/<%= I18n.locale.to_s %>/">
-          <%= img '/img/partners/eq3.png', alt: 'EQ3, du mobilier moderne pour la vie de tous les jours.' %></a>
-        <a href="http://www.bchunique.com/"><%= img '/img/partners/bchunique.png', alt: 'BCH Unique' %></a>
+      <div class="partners-logos">
+        <div class="half-inline">
+          <a href="http://www.ville.quebec.qc.ca/"><%= img '/img/partners/quebec.png', alt: 'Ville de Québec' %></a>
+        </div>
+        <div class="half-inline secondary">
+          <a href="http://www.bordeaux.fr/"><%= img '/img/partners/bordeau.png', alt: 'Ville de Bordeau, France' %></a>
+          <a href="http://webaquebec.org/"><%= img '/img/partners/waq.png', alt: 'Web à Québec' %></a>
+          <a href="http://www.eq3.com/ca/<%= I18n.locale.to_s %>/">
+            <%= img '/img/partners/eq3.png', alt: 'EQ3, du mobilier moderne pour la vie de tous les jours.' %></a>
+          <a href="http://www.bchunique.com/"><%= img '/img/partners/bchunique.png', alt: 'BCH Unique' %></a>
+        </div>
       </div>
     </section>
   </div>

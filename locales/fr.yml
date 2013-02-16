@@ -11,6 +11,11 @@ fr:
     dates: Du 20 au 22 février 2013
     time: 72 heures en direct
   sections:
+    folks:
+      title: Les gens
+      reds: Les rouges
+      greens: Les verts
+      jury: Les juges
     project:
       title: Le projet à réaliser
       text: |
@@ -26,10 +31,6 @@ fr:
         C'est une compétition de 72 heures pour développer une application web qui se
         tiendra pour une 3e année durant le Web à Québec à l'Espace 400e
         Bell et qui vous invite à littéralement entrer dans le monde de la conception web!
-    folks:
-      title: Les gens
-    jury:
-      title: Les juges
     partners:
       title: Nos partenaires
   roles:

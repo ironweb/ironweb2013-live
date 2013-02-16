@@ -11,6 +11,11 @@ en:
     dates: February 20 to 22, 2013
     time: 72 hours live
   sections:
+    folks:
+      title: The people
+      reds: The reds
+      greens: The greens
+      jury: The jury
     project:
       title: The project
       text: |
@@ -26,10 +31,6 @@ en:
         It's a competition that let you to enter the world of a team of web development
         during 3 days in a unique way. Watch the 2 teams of professionnals & student
         web selected compete to build the best application during the Web à Québec at Espace 400e Bell.
-    folks:
-      title: The people
-    jury:
-      title: The jury
     partners:
       title: Our partners
   roles:
