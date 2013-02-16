@@ -104,6 +104,7 @@
       <% @folks.each do |team, teamates| %>
       <h3 class="center"><%= t "sections.folks.#{team}" %></h3>
       <ul class="plain contestants">
+        <% teamates = Hash[teamates.to_a.sample(teamates.length)] %>
         <% teamates.each do |slug, infos| %>
         <li class="third-block">
           <span class="img"><%= img "/img/contestants/#{slug}.png", alt: infos[:name] %></span>
