@@ -31,12 +31,20 @@
 <body>
   <div class="container">
     <nav class="meta">
-      <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
-      <% if I18n.locale == :en %>
-        <a class="language" href="/">Français</a>
-      <% else %>
-        <a class="language" href="/en">English</a>
-      <% end %>
+      <div class="half-block menu-main">
+        <a href="#project"><%= t 'sections.project.title' %></a>
+        <a href="#stream"><%= t 'sections.stream.title' %></a>
+        <a href="#folks"><%= t 'sections.folks.title' %></a>
+        <a href="#partners"><%= t 'sections.partners.title' %></a>
+      </div>
+      <div class="half-block menu-more">
+        <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
+        <% if I18n.locale == :en %>
+          <a class="language" href="/">Français</a>
+        <% else %>
+          <a class="language" href="/en">English</a>
+        <% end %>
+      </div>
     </nav>
     <header>
       <div class="half-inline logo">
@@ -53,7 +61,7 @@
       </div>
     </header>
     <section class="about">
-      <div class="half-block">
+      <div class="half-block" id="project">
         <h2><%= t 'sections.project.title' %></h2>
         <p><%= t 'sections.project.text' %></p>
       </div>
@@ -62,7 +70,7 @@
         <p><%= t 'sections.about.text' %></p>
       </div>
     </section>
-    <section class="stream">
+    <section class="stream" id="stream">
       <div class="row">
         <h2 class="half-block"><%= t 'sections.stream.title' %></h2>
         <div class="half-block tabs">
@@ -78,7 +86,7 @@
         -->
       </div>
     </section>
-    <section class="folks">
+    <section class="folks" id="folks">
       <h2><%= t 'sections.folks.title' %></h2>
 
       <h3 class="center"><%= t 'sections.folks.reds' %></h3>
@@ -133,7 +141,7 @@
         </div>
       </div>
     </section>
-    <section class="partners">
+    <section class="partners" id="partners">
       <h2><%= t 'sections.partners.title' %></h2>
       <div class="partners-logos">
         <div class="half-inline">

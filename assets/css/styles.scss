@@ -160,9 +160,21 @@ header {
 nav.meta {
   @include row(block);
   padding: $baseMargin;
-  text-align: right;
   padding-right: 0;
   font-size: 0.75rem;
+
+  a {
+    display: inline-block;
+    padding: 0 $baseMargin / 2;
+  }
+
+  .menu-main {
+    color: $lightText;
+  }
+
+  .menu-more{
+    text-align: right;
+  }
 
   .language {
     font-weight:bold;
