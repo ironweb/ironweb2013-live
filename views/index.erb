@@ -2,12 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <%= css :app %>
     <%= js  :app %>
     <title><%= t 'meta.title' %></title>
     <meta name="description" content="<%= t 'meta.description' %>" />
   </head>
   <body>
-    <%= img '/img/header.png' %>
+    <nav>
+      <% if I18n.locale == :en %>
+        <a href="/">Français</a>
+      <% else %>
+        <a href="/en">English</a>
+      <% end %>
+    </nav>
+
   </body>
 </html>

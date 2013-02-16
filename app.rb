@@ -35,10 +35,11 @@ class Ironweb < Sinatra::Base
     js_compression  :jsmin      # Optional
     css_compression :simple       # Optional
   }
-
-  get '/' do
-    I18n.locale = :fr
-    I18n.reload! if development?
-    erb :index
+  {:fr => '/', :en => '/en'}.each do |locale, path|    
+    get path do
+      I18n.locale = locale
+      I18n.reload! if development?
+      erb :index
+    end
   end
 end
