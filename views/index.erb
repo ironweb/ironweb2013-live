@@ -3,10 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:title" content="<%= t 'meta.title' %>"/>
+    <meta property="og:site_name" content="Iron Web 2013"/>
+    <meta property="og:description" content="<%= t 'meta.description' %>"/>
+    <meta property="og:image" content="/img/share-logo-1.png"/>
+    <meta property="og:image" content="/img/share-logo-2.png"/>
+    <meta property="og:image" content="/img/share-logo-3.png"/>
     <%= css :app %>
     <%= js  :app %>
     <title><%= t 'meta.title' %></title>
     <meta name="description" content="<%= t 'meta.description' %>" />
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35981141-2']);
+    _gaq.push(['_setDomainName', 'ironweb.org']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>
   </head>
   <body>
     <nav>
@@ -16,6 +36,45 @@
         <a href="/en">English</a>
       <% end %>
     </nav>
+    <header>
+      <div class="logo">
+        <h1><%= img '/img/header.png', width: '389', height: '96', alt: 'Iron Web 2013' %></h1>
+      </div>
+      <div class="headlines last">
+        <div class="headlines-container">
+          <ul class="blocks icons">
+            <li class="ico-map"><%= t 'headlines.location' %></li>
+            <li class="ico-calendar"><%= t 'headlines.dates' %></li>
+            <li class="ico-time"><%= t 'headlines.time' %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
 
+    <section>
+      <h2><%= t 'sections.folks' %></h2>
+      <ul class="folks">
+        <li>Alexandre Lefrançois
+          <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
+        <li>Alexia B. Proulx
+          <span class="about"><%= t 'roles.integrator_e' %>, Cégep de Sainte-Foy</span></li>
+        <li>Cesar Monchablon
+          <span class="about"><%= t 'roles.designer' %>, Cégep de Sainte-Foy</span></li>
+        <li>Damien Van Der Windt
+          <span class="about"><%= t 'roles.integrator' %>, Nurun</span></li>
+        <li>Emilie Bergeron
+          <span class="about"><%= t 'roles.designer' %>, Vox CG</span></li>
+        <li>Gregory Eric Sanderson
+          <span class="about"><%= t 'roles.programmer' %>, Avencall</span></li>
+        <li>Jimmy Bourassa
+          <span class="about"><%= t 'roles.programmer' %>, Hookt Studios</span></li>
+        <li>Mathieu Pesant
+          <span class="about"><%= t 'roles.integrator' %>, Cégep de Sainte-Foy</span></li>
+        <li>Fletcher Tomalty
+          <span class="about"><%= t 'roles.programmer' %></span></li>
+        <li>Sylvain Bouchard
+          <span class="about"><%= t 'roles.programmer' %>, Savoir-faire Linux</span></li>
+      </ul>
+    </section>
   </body>
 </html>

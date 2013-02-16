@@ -6,3 +6,10 @@ en:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
     time: 72 hours live
+  sections:
+    folks: The people
+  roles:
+    integrator: Integrator
+    integrator_e: Integrator
+    designer: Designer
+    programmer: Developer
