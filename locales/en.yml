@@ -1,13 +1,35 @@
 en:
   meta:
     title: Iron Web 2013 at Web à Québec
-    description: The Iron Web is a «web reality» competition. Contestants are building an awesome web app within 72 hours while you are watching!
+    description: |
+      The Iron Web is a «web reality» competition.
+      Contestants are building an awesome web app within 72 hours while you are watching!
   headlines:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
     time: 72 hours live
   sections:
-    folks: The people
+    project:
+      title: The project
+      text: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer quis justo a justo eleifend consequat in nec libero. Maecenas
+        justo nibh, auctor quis porttitor viverra, placerat hendrerit magna.
+        Integer nisl risus, faucibus eget porttitor porta, iaculis sit amet dolor.
+        Duis cursus, sapien at sodales condimentum, lectus libero mollis diam, et
+        pellentesque risus sapien et turpis. Cras pretium odio vitae lorem pharetra dignissim.
+    about:
+      title: What is the Iron Web?
+      text: |
+        It's a competition that let you to enter the world of web application development
+        during 3 days in a unique way. Watch the 2 teams of professionnals & student
+        web selected compete to build the best application during the Web à Québec at Espace 400e Bell.
+    folks:
+      title: The people
+    jury:
+      title: The jury
+    partners:
+      title: Our partners
   roles:
     integrator: Integrator
     integrator_e: Integrator

@@ -50,9 +50,14 @@
         </div>
       </div>
     </header>
-
     <section>
-      <h2><%= t 'sections.folks' %></h2>
+      <h2><%= t 'sections.project.title' %></h2>
+      <p><%= t 'sections.project.text' %></p>
+      <h2><%= t 'sections.about.title' %> </h2>
+      <p><%= t 'sections.about.text' %></p>
+    </section>
+    <section>
+      <h2><%= t 'sections.folks.title' %></h2>
       <ul class="folks">
         <li>Alexandre Lefrançois
           <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
@@ -74,6 +79,41 @@
           <span class="about"><%= t 'roles.programmer' %></span></li>
         <li>Sylvain Bouchard
           <span class="about"><%= t 'roles.programmer' %>, Savoir-faire Linux</span></li>
+      </ul>
+    </section>
+    <section>
+      <h2><%= t 'sections.jury.title' %></h2>
+      <div class="judge">        
+        <%= img '/img/jury/dgupta.jpg', alt: 'Davender Gupta' %>
+        <h3>Davender Gupta</h3>
+        <p><a href="http://twitter.com/coachdavender">@coachdavender</a></p>
+      </div>
+      <div class="judge">        
+        <%= img '/img/jury/jfournier.jpg', alt: 'Davender Gupta' %>
+        <h3>Joanne Fournier</h3>
+        <p><a href="http://twitter.com/jfournier">@jfournier</a></p>
+      </div>
+      <div class="judge">        
+        <%= img '/img/jury/sgarneau.jpg', alt: 'Davender Gupta' %>
+        <h3>Samuel Garneau</h3>
+        <p><a href="http://twitter.com/garno">@garno</a></p>
+      </div>
+      <div class="judge">        
+        <%= img '/img/jury/palalonde.jpg', alt: 'Pierre-Armand Lalonde' %>
+        <h3>Pierre-Armand Lalonde</h3>
+        <p><a href="http://twitter.com/palalonde">@palalonde</a></p>
+      </div>
+    </section>
+    <section>
+      <h2><%= t 'sections.partners.title' %></h2>
+      <ul>
+        <li><a href="http://www.ville.quebec.qc.ca/"><%= img '/img/partners/quebec.png', alt: 'Ville de Québec' %></a></li>
+        <li><a href="http://webaquebec.org/"><%= img '/img/partners/waq.png', alt: 'Web à Québec' %></a></li>
+        <li><a href="http://www.bordeaux.fr/"><%= img '/img/partners/bordeau.png', alt: 'Ville de Bordeau, France' %></a></li>
+        <li><a href="http://www.eq3.com/ca/<%= I18n.locale.to_s %>/">
+          <%= img '/img/partners/eq3.png', alt: 'EQ3, du mobilier moderne pour la vie de tous les jours.' %>
+          </a></li>
+        <li><a href="http://www.bchunique.com/"><%= img '/img/partners/bchunique.png', alt: 'BCH Unique' %></a></li>
       </ul>
     </section>
   </body>
