@@ -4,9 +4,18 @@ require 'bundler'
 
 Bundler.require
 
+I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
+
 class Ironweb < Sinatra::Base
   set :root, File.dirname(__FILE__)
   register Sinatra::AssetPack
+  register Sinatra::Reloader if development?
+
+  helpers do
+    def t(*args)
+      I18n.t(*args)
+    end
+  end
 
   assets {
     serve '/',     from: 'assets/public'
@@ -28,6 +37,8 @@ class Ironweb < Sinatra::Base
   }
 
   get '/' do
+    I18n.locale = :fr
+    I18n.reload! if development?
     erb :index
   end
 end
