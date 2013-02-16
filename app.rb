@@ -41,6 +41,62 @@ class Ironweb < Sinatra::Base
       I18n.reload! if development?
       @channels = [:ironweb_greens, :ironweb_reds]
       params[:channel] ||= @channels.sample
+
+      @folks = {
+        contestants: {
+          alefrancois: {
+            name: 'Alexandre Lefrançois',
+            company: 'Image de Mark',
+            role: :integrator,
+          },
+          abproulx: {
+            name: 'Alexia B. Proulx',
+            company: 'Cégep de Sainte-Foy',
+            role: :integrator_e,
+          },
+          cmonchablon: {
+            name: 'Cesar Monchablon',
+            company: 'Cégep de Sainte-Foy',
+            role: :designer,
+          },
+          dvanderwindt: {
+            name: 'Damien Van Der Windt',
+            company: 'Nurun',
+            role: :integrator,
+          },
+          ebergeron: {
+            name: 'Emilie Bergeron',
+            company: ' Vox CG',
+            role: :designer,
+          },
+          gesanderson: {
+            name: 'Gregory Eric Sanderson',
+            company: 'Avencall',
+            role: :programmer,
+          },
+          jbourassa: {
+            name: 'Jimmy Bourassa',
+            company: 'Hookt Studios',
+            role: :programmer,
+          },
+          mpesant: {
+            name: 'Mathieu Pesant',
+            company: 'Cégep de Sainte-Foy',
+            role: :integrator,
+          },
+          ftomalty: {
+            name: 'Fletcher Tomalty',
+            company: nil,
+            role: :programmer,
+          },
+          sbouchard: {
+            name: 'Sylvain Bouchard',
+            company: 'Savoir-faire Linux',
+            role: :programmer,
+          },
+        }
+      }
+
       erb :index
     end
   end

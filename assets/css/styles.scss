@@ -37,6 +37,10 @@ div.container {
   @include span-columns(6, inline-block);
 }
 
+.third-block {
+  @include span-columns(4);
+}
+
 .quarter-block {
   @include span-columns(3);
 }
@@ -208,6 +212,10 @@ section.about {
   padding:$baseMargin * 2;
   color: $lightText;
 
+  a {
+    color: $lightText;
+  }
+
   h2 {
     font-size: 2.4rem;
     margin-bottom: $baseMargin * 2;
@@ -217,6 +225,42 @@ section.about {
 
 .judges h4 {
   font-size:25px;
+}
+
+.contestants {
+  @include row(block);
+
+  li {
+    @include omega(3n);
+    margin-bottom: $baseMargin;
+  }
+
+  span.img,
+  span.details {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span.img {
+    margin-right: $baseMargin;
+  }
+
+  span.details {
+    width: 140px;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-family: miso;
+    color: #367c97;
+    margin-bottom: 0;
+  }
+
+  h5 {
+    font-weight: normal;
+    font-size: 0.85rem;
+    color: #9bbbc8;
+  }
 }
 
 section.partners {

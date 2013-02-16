@@ -1,4 +1,5 @@
 fr:
+  coming: "À venir bientôt!"
   meta:
     title: Iron Web 2013 au Web à Québec
     description: |
@@ -28,6 +29,7 @@ fr:
       jury: Les juges
     project:
       title: Le projet à réaliser
+      facebook: Suivez-nous sur Facebook pour le savoir en premier!
       text: |
         Le projet sera annnoncé autour de 9h30 le 20 février prochain!
     about:

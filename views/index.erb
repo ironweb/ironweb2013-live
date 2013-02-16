@@ -63,13 +63,14 @@
       </div>
     </header>
     <section class="about">
-      <div class="half-block" id="project">
-        <h2><%= t 'sections.project.title' %></h2>
-        <p><%= t 'sections.project.text' %></p>
-      </div>
       <div class="half-block">
         <h2><%= t 'sections.about.title' %></h2>
         <p><%= t 'sections.about.text' %></p>
+      </div>
+      <div class="half-block" id="project">
+        <h2><%= t 'sections.project.title' %></h2>
+        <p><%= t 'sections.project.text' %></p>
+        <p><a href="https://www.facebook.com/webaquebec/"><%= t 'sections.project.facebook' %></a></p>
       </div>
     </section>
     <section class="stream" id="stream">
@@ -77,7 +78,7 @@
         <h2 class="half-block"><%= t 'sections.stream.title' %></h2>
         <div class="half-block tabs">
           <% @channels.each do |chan| %>        
-            <a href="<%= "#{params[:url]}?channel=#{chan}" %>" class="team reds<%= params[:channel].to_sym == chan ? ' active' : ''%>">
+            <a href="<%= "#{params[:url]}?channel=#{chan}#stream" %>" class="team reds<%= params[:channel].to_sym == chan ? ' active' : ''%>">
               <%= t "sections.stream.#{chan}" %></a>
           <% end %>
         </div>
@@ -91,39 +92,32 @@
     <section class="feed">
       <div class="half-block" id="medias">
         <h2><%= t 'sections.medias.title' %></h2>
+        <p><%= t 'coming' %></p>
       </div>
       <div class="half-block" id="events">
         <h2><%= t 'sections.events.title' %></h2>
+        <p><%= t 'coming' %></p>
       </div>
     </section>
     <section class="folks" id="folks">
       <h2><%= t 'sections.folks.title' %></h2>
-
-      <h3 class="center"><%= t 'sections.folks.contestants' %></h3>
-      <ul class="plain folks">
-        <li>Alexandre Lefrançois
-          <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
-        <li>Alexia B. Proulx
-          <span class="about"><%= t 'roles.integrator_e' %>, Cégep de Sainte-Foy</span></li>
-        <li>Cesar Monchablon
-          <span class="about"><%= t 'roles.designer' %>, Cégep de Sainte-Foy</span></li>
-        <li>Damien Van Der Windt
-          <span class="about"><%= t 'roles.integrator' %>, Nurun</span></li>
-        <li>Emilie Bergeron
-          <span class="about"><%= t 'roles.designer' %>, Vox CG</span></li>
+      <% @folks.each do |team, teamates| %>
+      <h3 class="center"><%= t "sections.folks.#{team}" %></h3>
+      <ul class="plain contestants">
+        <% teamates.each do |slug, infos| %>
+        <li class="third-block">
+          <span class="img"><%= img "/img/contestants/#{slug}.png", alt: infos[:name] %></span>
+          <span class="details">
+            <h4><%= infos[:name] %></h4>
+            <h5><%= t "roles.#{infos[:role]}" %></h5>
+            <% if infos[:company] %>
+            <p><%= infos[:company] %></p>
+            <% end %>
+          </span>
+        </li>
+        <% end %>
       </ul>
-      <ul class="plain folks">
-        <li>Gregory Eric Sanderson
-          <span class="about"><%= t 'roles.programmer' %>, Avencall</span></li>
-        <li>Jimmy Bourassa
-          <span class="about"><%= t 'roles.programmer' %>, Hookt Studios</span></li>
-        <li>Mathieu Pesant
-          <span class="about"><%= t 'roles.integrator' %>, Cégep de Sainte-Foy</span></li>
-        <li>Fletcher Tomalty
-          <span class="about"><%= t 'roles.programmer' %></span></li>
-        <li>Sylvain Bouchard
-          <span class="about"><%= t 'roles.programmer' %>, Savoir-faire Linux</span></li>
-      </ul>
+      <% end %>
   
       <h3 class="center"><%= t 'sections.folks.jury' %></h3>
       <div class="judges">
