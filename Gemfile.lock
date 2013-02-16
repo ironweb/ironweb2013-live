@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (2.8.2)
-    bourbon (3.0.1)
+    bourbon (3.1.0)
       sass (>= 3.2.0)
       thor
     daemons (1.1.9)
