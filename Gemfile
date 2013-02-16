@@ -10,3 +10,7 @@ gem 'thin'
 gem 'rake'
 gem 'sass'
 gem 'i18n'
+
+# Additionnals libs
+gem 'bourbon'
+gem 'neat'
