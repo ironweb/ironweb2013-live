@@ -4,6 +4,8 @@ fr:
     description: |
       Le Iron Web est une compétition de type «web réalité».
       Les participants devront concevoir un site web extraordinaire en 72 heures qui épatera le jury et le public.
+  nav:
+    contact: Contactez-nous
   headlines:
     location: Espace 400e Bell, Québec
     dates: Du 20 au 22 février 2013

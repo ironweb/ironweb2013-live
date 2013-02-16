@@ -1,46 +1,48 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta property="og:title" content="<%= t 'meta.title' %>"/>
-    <meta property="og:site_name" content="Iron Web 2013"/>
-    <meta property="og:description" content="<%= t 'meta.description' %>"/>
-    <meta property="og:image" content="/img/share-logo-1.png"/>
-    <meta property="og:image" content="/img/share-logo-2.png"/>
-    <meta property="og:image" content="/img/share-logo-3.png"/>
-    <%= css :app %>
-    <%= js  :app %>
-    <title><%= t 'meta.title' %></title>
-    <meta name="description" content="<%= t 'meta.description' %>" />
-    <script type="text/javascript">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta property="og:title" content="<%= t 'meta.title' %>"/>
+  <meta property="og:site_name" content="Iron Web 2013"/>
+  <meta property="og:description" content="<%= t 'meta.description' %>"/>
+  <meta property="og:image" content="/img/share-logo-1.png"/>
+  <meta property="og:image" content="/img/share-logo-2.png"/>
+  <meta property="og:image" content="/img/share-logo-3.png"/>
+  <%= css :app %>
+  <%= js  :app %>
+  <title><%= t 'meta.title' %></title>
+  <meta name="description" content="<%= t 'meta.description' %>" />
+  <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-35981141-2']);
-    _gaq.push(['_setDomainName', 'ironweb.org']);
-    _gaq.push(['_trackPageview']);
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35981141-2']);
+  _gaq.push(['_setDomainName', 'ironweb.org']);
+  _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-    </script>
-  </head>
-  <body>
-    <nav>
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav class="meta">
+      <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
       <% if I18n.locale == :en %>
-        <a href="/">Français</a>
+        <a class="language" href="/">Français</a>
       <% else %>
-        <a href="/en">English</a>
+        <a class="language" href="/en">English</a>
       <% end %>
     </nav>
     <header>
-      <div class="logo">
+      <div class="half-inline logo">
         <h1><%= img '/img/header.png', width: '389', height: '96', alt: 'Iron Web 2013' %></h1>
       </div>
-      <div class="headlines last">
+      <div class="half-inline headlines">
         <div class="headlines-container">
           <ul class="blocks icons">
             <li class="ico-map"><%= t 'headlines.location' %></li>
@@ -50,15 +52,19 @@
         </div>
       </div>
     </header>
-    <section>
-      <h2><%= t 'sections.project.title' %></h2>
-      <p><%= t 'sections.project.text' %></p>
-      <h2><%= t 'sections.about.title' %> </h2>
-      <p><%= t 'sections.about.text' %></p>
+    <section class="about">
+      <div class="half-block">
+        <h2><%= t 'sections.project.title' %></h2>
+        <p><%= t 'sections.project.text' %></p>
+      </div>
+      <div class="half-block">
+        <h2><%= t 'sections.about.title' %></h2>
+        <p><%= t 'sections.about.text' %></p>
+      </div>
     </section>
     <section>
       <h2><%= t 'sections.folks.title' %></h2>
-      <ul class="folks">
+      <ul class="plain folks">
         <li>Alexandre Lefrançois
           <span class="about"><%= t 'roles.integrator' %>, Image de Mark</span></li>
         <li>Alexia B. Proulx
@@ -81,40 +87,42 @@
           <span class="about"><%= t 'roles.programmer' %>, Savoir-faire Linux</span></li>
       </ul>
     </section>
-    <section>
+    <section class="judges">
       <h2><%= t 'sections.jury.title' %></h2>
-      <div class="judge">        
+      <div class="judge quarter-block">
         <%= img '/img/jury/dgupta.jpg', alt: 'Davender Gupta' %>
         <h3>Davender Gupta</h3>
         <p><a href="http://twitter.com/coachdavender">@coachdavender</a></p>
       </div>
-      <div class="judge">        
+      <div class="judge quarter-block">
         <%= img '/img/jury/jfournier.jpg', alt: 'Davender Gupta' %>
         <h3>Joanne Fournier</h3>
         <p><a href="http://twitter.com/jfournier">@jfournier</a></p>
       </div>
-      <div class="judge">        
+      <div class="judge quarter-block">
         <%= img '/img/jury/sgarneau.jpg', alt: 'Davender Gupta' %>
         <h3>Samuel Garneau</h3>
         <p><a href="http://twitter.com/garno">@garno</a></p>
       </div>
-      <div class="judge">        
+      <div class="judg quarter-block">
         <%= img '/img/jury/palalonde.jpg', alt: 'Pierre-Armand Lalonde' %>
         <h3>Pierre-Armand Lalonde</h3>
         <p><a href="http://twitter.com/palalonde">@palalonde</a></p>
       </div>
     </section>
-    <section>
+    <section class="partners">
       <h2><%= t 'sections.partners.title' %></h2>
-      <ul>
-        <li><a href="http://www.ville.quebec.qc.ca/"><%= img '/img/partners/quebec.png', alt: 'Ville de Québec' %></a></li>
-        <li><a href="http://webaquebec.org/"><%= img '/img/partners/waq.png', alt: 'Web à Québec' %></a></li>
-        <li><a href="http://www.bordeaux.fr/"><%= img '/img/partners/bordeau.png', alt: 'Ville de Bordeau, France' %></a></li>
-        <li><a href="http://www.eq3.com/ca/<%= I18n.locale.to_s %>/">
-          <%= img '/img/partners/eq3.png', alt: 'EQ3, du mobilier moderne pour la vie de tous les jours.' %>
-          </a></li>
-        <li><a href="http://www.bchunique.com/"><%= img '/img/partners/bchunique.png', alt: 'BCH Unique' %></a></li>
-      </ul>
+      <div class="half-block">
+        <a href="http://www.ville.quebec.qc.ca/"><%= img '/img/partners/quebec.png', alt: 'Ville de Québec' %></a>
+      </div>
+      <div class="half-block secondary">
+        <a href="http://webaquebec.org/"><%= img '/img/partners/waq.png', alt: 'Web à Québec' %></a>
+        <a href="http://www.bordeaux.fr/"><%= img '/img/partners/bordeau.png', alt: 'Ville de Bordeau, France' %></a>
+        <a href="http://www.eq3.com/ca/<%= I18n.locale.to_s %>/">
+          <%= img '/img/partners/eq3.png', alt: 'EQ3, du mobilier moderne pour la vie de tous les jours.' %></a>
+        <a href="http://www.bchunique.com/"><%= img '/img/partners/bchunique.png', alt: 'BCH Unique' %></a>
+      </div>
     </section>
-  </body>
+  </div>
+</body>
 </html>

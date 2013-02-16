@@ -1,9 +1,177 @@
 /* styles.scss */
 @import "assets/css/bourbon/bourbon";
 @import "assets/css/neat/neat";
+@import "assets/css/neat/neat-helpers";
 
-/* WAQ Theme */
-$turquoise  : #20C2DD;
-$grey       : #6e6e6e;
-$greyLight  : #f3f3f3;
-$marine     : #006287;
+* { @include box-sizing(border-box); }
+
+/* Fonrts */
+@include font-face(miso, "/fonts/miso-webfont");
+@include font-face(miso, "/fonts/miso-light-webfont", light);
+@include font-face(miso, "/fonts/miso-bold-webfont", bold);
+
+/* Grid settings */
+$column: 4em;
+$gutter: 1.5em;
+$grid-columns: 12;
+$max-width: em(1088);
+
+
+/* Theme */
+$blueLight: #b3cfd9;
+$blueDark: #71909c;
+$lightText: #afd9ea;
+$darkText: #367c97;
+$baseMargin: 1.0rem;
+
+/* Grid */
+div.container {
+  @include outer-container;
+  @include media(480px, 4);
+}
+
+.half-block {
+  @include span-columns(6);
+}
+
+.quarter-block {
+  @include span-columns(3);
+}
+
+.sixt-block {
+  @include span-columns(2);
+}
+
+/* Base layout styles */
+body {
+  font-family: Arial;
+  color: $darkText;
+}
+
+header {
+  @include row(block);
+}
+
+a {
+  color: $blueDark;
+}
+
+p {
+  margin-bottom: $baseMargin;
+  font-size: 14px;
+  line-height: 1.25rem;
+}
+
+section {
+  @include row(block);
+  margin-bottom: $baseMargin * 4;
+}
+
+h2 {
+  font-family: miso;
+  font-weight: normal;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: $blueLight;
+  margin-bottom: $baseMargin * 3;
+}
+
+h3 {
+  font-family: miso;
+  font-weight: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: $blueDark;
+  margin-bottom: $baseMargin;
+}
+
+.plain {
+  list-style: none;
+  li { display: inline-block; }
+}
+
+/* Specific stuff*/
+
+header {
+  @include radial-gradient(25% 50%, circle cover, #1ebcda 10%, #0588ba 30%, #0588ba, $fallback: #0588ba);
+  overflow: hidden;
+  margin-bottom: 0;
+
+  .half-inline {
+    @include span-columns(6, inline-block);
+    padding: $baseMargin;
+    vertical-align: middle;
+    margin-right:0;
+  }
+
+  .blocks {
+    &.icons li {
+      background-color: #f8f8f8;
+    }
+  }
+
+  .blocks li {
+    list-style-type: none;
+    background-color: $lightText;
+    padding: 0.75rem;
+  }
+
+  .blocks.icons {
+    li {
+      background-color: #fff;
+      margin-bottom: $baseMargin;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    li:before {
+      content: "";
+      padding-right:32px;
+      background: image-url('/img/time.png') center left no-repeat;
+      font-size:20px;
+    }
+    .ico-time:before {
+      @include background-image('/img/time.png');
+    }
+    .ico-calendar:before {
+      @include background-image('/img/calendar.png');
+    }
+    .ico-map:before  {
+      @include background-image('/img/map.png');
+    }
+  }
+}
+
+nav.meta {
+  @include row(block);
+  padding: $baseMargin;
+  text-align: right;
+  padding-right: 0;
+  font-size: 0.75rem;
+
+  .language {
+    font-weight:bold;
+  }
+}
+
+section.about {
+  @include linear-gradient(270deg, #0b4359 0%, #165871 30%, #165871 31%, #165871 100%);
+  padding:$baseMargin * 2;
+  color: $lightText;
+}
+
+section.judges h3 {
+  font-size:25px;
+}
+
+section.partners {
+  a {
+    display: inline-block;
+    padding: $baseMargin;
+    vertical-align: middle;
+  }
+
+  .secondary {
+    padding-top:$baseMargin * 2;
+  }
+}

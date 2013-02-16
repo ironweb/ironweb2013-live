@@ -25,10 +25,10 @@ class Ironweb < Sinatra::Base
     serve '/img', from: 'assets/img'
 
     js :app, '/js/app.js', [
-      '/js/vendor/jquery.js',
       '/js/main.js'
     ]
     css :app, '/css/application.css', [
+      '/css/reset.css',
       '/css/styles.css',
     ]
 
