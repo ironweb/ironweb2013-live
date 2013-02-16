@@ -94,10 +94,6 @@ h3 {
   font-size: 40px;
   color: $blueDark;
   margin-bottom: $baseMargin;
-
-  &.center {
-    text-align: center;
-  }
 }
 
 h4 {
@@ -223,12 +219,20 @@ section.about {
   }
 }
 
+section.folks {
+  h3 {
+    text-align:center;
+    margin-bottom: $baseMargin * 4;
+  }
+}
+
 .judges h4 {
   font-size:25px;
 }
 
 .contestants {
   @include row(block);
+  margin-bottom: $baseMargin * 4;
 
   li {
     @include omega(3n);
