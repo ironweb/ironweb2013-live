@@ -11,6 +11,10 @@ fr:
     dates: Du 20 au 22 février 2013
     time: 72 heures en direct
   sections:
+    stream:
+      title: Le stream
+      ironweb_reds: Rouges
+      ironweb_greens: Verts
     folks:
       title: Les gens
       reds: Les rouges

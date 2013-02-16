@@ -11,6 +11,10 @@ en:
     dates: February 20 to 22, 2013
     time: 72 hours live
   sections:
+    stream:
+      title: The stream
+      ironweb_reds: Reds
+      ironweb_greens: Greens
     folks:
       title: The people
       reds: The reds

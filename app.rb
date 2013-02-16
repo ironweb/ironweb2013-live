@@ -39,6 +39,8 @@ class Ironweb < Sinatra::Base
     get path do
       I18n.locale = locale
       I18n.reload! if development?
+      @channels = [:ironweb_greens, :ironweb_reds]
+      params[:channel] ||= @channels.sample
       erb :index
     end
   end
