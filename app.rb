@@ -60,6 +60,8 @@ class Ironweb < Sinatra::Base
     end
   end
 
+  private
+
   def set_locale locale
     I18n.locale = locale
     I18n.reload! if development?
@@ -134,14 +136,27 @@ class Ironweb < Sinatra::Base
         },
       }
     }
-    @videos = cache.fetch('videos', :expires_in => 120) do
-      Vimeo::Simple::User.videos('webaquebec').parsed_response
+    @videos = cache.fetch('videos', :expires_in => 10) do
+      rescue_array do
+        Vimeo::Simple::User.videos('webaquebec').parsed_response
+      end
     end
 
     Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
-    @photos = cache.fetch('photos', :expire_in => 120) do
-      graph = Koala::Facebook::API.new(ENV['OAUTH_ACCESS_TOKEN'])
-      graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
+    @photos = cache.fetch('photos', :expire_in => 10) do
+      rescue_array do
+        oauth = @oauth = Koala::Facebook::OAuth.new(ENV['FB_APP_ID'], ENV['FB_APP_SECRET'])
+        graph = Koala::Facebook::API.new(oauth.get_app_access_token)
+        graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
+      end
+    end
+  end
+
+  def rescue_array &block
+    begin
+      block.call
+    rescue Exception => exception
+      nil
     end
   end
 end

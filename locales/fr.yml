@@ -1,5 +1,6 @@
 fr:
-  coming: "À venir bientôt!"
+  unavailable: Indisponible.
+  coming: À venir bientôt!
   meta:
     title: Iron Web 2013 au Web à Québec
     watching: "Suivez l'équipe des %{team} au Iron Web 2013!"
