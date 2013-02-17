@@ -1,2 +1,2 @@
-worker_processes 3
+worker_processes ENV['UNICORN_WORKERS'].to_i
 timeout 5
