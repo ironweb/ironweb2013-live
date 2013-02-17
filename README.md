@@ -5,7 +5,8 @@
 ## Getting started
 
     bundle install
-    rackup
+    echo "RACK_ENV=development" > .env
+    foreman start
 
 ## Contributing
 
