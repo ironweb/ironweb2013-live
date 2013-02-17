@@ -8,12 +8,16 @@ I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s
 
 class Ironweb < Sinatra::Base
   set :root, File.dirname(__FILE__)
+
   register Sinatra::AssetPack
   register Sinatra::Reloader if development?
 
   helpers do
     def t(*args)
       I18n.t(*args)
+    end
+    def cache
+      @@cache ||= ActiveSupport::Cache::MemoryStore.new()
     end
   end
 
@@ -104,6 +108,9 @@ class Ironweb < Sinatra::Base
           },
         }
       }
+      @videos = cache.fetch('videos', :expires_in => 120) do
+        Vimeo::Simple::User.videos('webaquebec').parsed_response
+      end
 
       erb :index
     end

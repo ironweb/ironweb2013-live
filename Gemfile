@@ -10,7 +10,11 @@ gem 'thin'
 gem 'rake'
 gem 'sass'
 gem 'i18n'
+gem 'activesupport',
+  :require => 'active_support/cache'
 
 # Additionnals libs
 gem 'bourbon'
 gem 'neat'
+
+gem 'vimeo'
