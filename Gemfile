@@ -24,3 +24,4 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'vimeo'
+gem 'koala'

@@ -92,6 +92,12 @@
     <section class="feed">
       <div class="half-block" id="medias">
         <h2><%= t 'sections.medias.title' %></h2>
+        <h3><%= t 'sections.medias.photos' %></h3>
+        <p>
+        <% @photos[0..8].each do |photo| %>
+          <a target="_blank" href="<%= photo["link"] %>"><img src="<%= photo["picture"] %>" alt="" /></a>
+        <% end %>
+        </p>
         <h3><%= t 'sections.medias.videos' %></h3>
         <% @videos[0..7].each do |video| %>
           <a target="_blank" href="<%= video["url"] %>"><img src="<%= video["thumbnail_small"] %>" alt="" /></a>

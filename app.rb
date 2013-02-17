@@ -112,6 +112,12 @@ class Ironweb < Sinatra::Base
         Vimeo::Simple::User.videos('webaquebec').parsed_response
       end
 
+      Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
+      @photos = cache.fetch('photos', :expire_in => 120) do
+        graph = Koala::Facebook::API.new(ENV['OAUTH_ACCESS_TOKEN'])
+        graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
+      end
+
       erb :index
     end
   end
