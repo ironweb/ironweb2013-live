@@ -208,6 +208,18 @@ section.stream {
       color: #71909c;
     }
   }
+
+  h2 { margin-bottom: 0; }
+}
+
+.stream-wrap {
+  border: 1px solid #d4dde1;
+  padding-top: 3rem;
+  clear: both;
+
+  iframe {
+    width: 100%;
+  }
 }
 
 section.about {
@@ -321,6 +333,10 @@ section.partners {
     @include span-columns(6);
     margin-right: 0;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .stream-wrap { padding-top: 0;}
 }
 
 @media screen and (max-width: 680px) {
