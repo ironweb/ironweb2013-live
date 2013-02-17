@@ -10,6 +10,10 @@
   <meta property="og:image" content="/img/share-logo-2.png"/>
   <meta property="og:image" content="/img/share-logo-3.png"/>
   <%= css :app %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  var commitsData = <%= @commitsData.to_json %>
+  </script>
   <%= js  :app %>
   <title><%= @title %></title>
   <meta name="description" content="<%= t 'meta.description' %>" />
@@ -86,6 +90,10 @@
       <div class="stream">
         <iframe src="http://new.livestream.com/accounts/75437/events/<%= @livestream_paths[params[:channel]] %>/feed_embed?width=960&height=480"
           width="960" height="480" frameborder="0" id="feed-embed-stand-alone"></iframe>
+      </div>
+      <div class="commits">
+        <div class="title"><%= t 'commits_per_hour' %></div>
+        <div id="commits-chart"></div>
       </div>
     </section>
     <section class="feed">

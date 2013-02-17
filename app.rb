@@ -29,7 +29,8 @@ class Ironweb < Sinatra::Base
     serve '/img', from: 'assets/img'
 
     js :app, '/js/app.js', [
-      '/js/main.js'
+      '/js/main.js',
+      '/js/vendors/highcharts/highcharts.js'
     ]
     css :app, '/css/application.css', [
       '/css/reset.css',
@@ -150,6 +151,38 @@ class Ironweb < Sinatra::Base
         graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
       end
     end
+
+    @hours = cache.fetch('commits', :expire_in => 10) do
+      github = Github.new do |config|
+        config.endpoint    = 'https://api.github.com'
+        config.oauth_token = ENV['GITHUB_TOKEN']
+        config.adapter     = :net_http
+        config.ssl         = {:verify => false} if development?
+      end
+      @commits = github.repos.commits.all('ironweb', 'ironweb-live')
+      @hours = []
+      @commits.map! do |reponse|
+        # require 'debugger'
+        # debugger
+        if reponse.commit.committer
+          time = reponse.commit.committer.date
+        else
+          time = reponse.commit.author.date
+        end
+        hour = ((Time.parse(time).localtime - Time.now)/60/60).round * -1
+        if @hours[hour].nil?
+          @hours[hour] = 1
+        else
+          @hours[hour] = @hours[hour] + 1
+        end
+      end
+      @hours
+    end
+    @commitsData = [{
+      name: '',
+      color: '#95b1bd',
+      data: @hours.reverse
+    }]
   end
 
   def rescue_array &block

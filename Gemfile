@@ -16,6 +16,7 @@ gem 'sinatra-assetpack'
 gem 'rake'
 gem 'sass'
 gem 'i18n'
+gem 'tzinfo'
 gem 'activesupport',
   :require => 'active_support/cache'
 
@@ -25,3 +26,8 @@ gem 'neat'
 
 gem 'vimeo'
 gem 'koala'
+gem 'github_api'
+
+group :development do
+  gem 'debugger'
+end

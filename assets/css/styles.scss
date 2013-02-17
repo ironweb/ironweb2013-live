@@ -220,6 +220,22 @@ section.about {
   }
 }
 
+.commits {
+  font-size:0;
+  .title {
+    @include span-columns(1, inline-block);
+    font-family: miso;
+    font-size:1.25rem;
+    color: $darkText;
+    vertical-align: baseline;
+  }
+}
+
+#commits-chart {
+  @include span-columns(11, inline-block);
+  vertical-align: baseline;
+}
+
 section.folks {
   h3 {
     text-align:center;
