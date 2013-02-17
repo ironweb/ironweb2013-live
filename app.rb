@@ -76,12 +76,39 @@ class Ironweb < Sinatra::Base
       :greens => '1888141'
     }
     @folks = {
-      contestants: {
+      greens: {
         alefrancois: {
           name: 'Alexandre Lefrançois',
           company: 'Image de Mark',
           role: :integrator,
         },
+        ebergeron: {
+          name: 'Emilie Bergeron',
+          company: ' Vox CG',
+          role: :designer,
+        },
+        mpesant: {
+          name: 'Mathieu Pesant',
+          company: 'Cégep de Sainte-Foy',
+          role: :integrator,
+        },
+        sbouchard: {
+          name: 'Sylvain Bouchard',
+          company: 'Savoir-faire Linux',
+          role: :programmer,
+        },
+        ftomalty: {
+          name: 'Fletcher Tomalty',
+          company: nil,
+          role: :programmer,
+        },
+        mysterious1: {
+          name: 'Antoine Savignac',
+          company: t('sections.folks.from_bordeau'),
+          role: :integrator,
+        },
+      },
+      reds: {
         abproulx: {
           name: 'Alexia B. Proulx',
           company: 'Cégep de Sainte-Foy',
@@ -97,11 +124,6 @@ class Ironweb < Sinatra::Base
           company: 'Nurun',
           role: :integrator,
         },
-        ebergeron: {
-          name: 'Emilie Bergeron',
-          company: ' Vox CG',
-          role: :designer,
-        },
         gesanderson: {
           name: 'Gregory Eric Sanderson',
           company: 'Avencall',
@@ -112,27 +134,9 @@ class Ironweb < Sinatra::Base
           company: 'Hookt Studios',
           role: :programmer,
         },
-        mpesant: {
-          name: 'Mathieu Pesant',
-          company: 'Cégep de Sainte-Foy',
-          role: :integrator,
-        },
-        ftomalty: {
-          name: 'Fletcher Tomalty',
-          company: nil,
-          role: :programmer,
-        },
-        sbouchard: {
-          name: 'Sylvain Bouchard',
-          company: 'Savoir-faire Linux',
-          role: :programmer,
-        },
-        mysterious1: {
-          name: 'Inconnu/Unknown',
-          role: :integrator,
-        },
         mysterious2: {
-          name: 'Inconnu/Unknown',
+          name: 'Benjamin Bort',
+          company: t('sections.folks.from_bordeau'),
           role: :integrator,
         },
       }
