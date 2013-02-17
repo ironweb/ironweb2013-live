@@ -156,6 +156,12 @@ header {
       @include retina-image(/img/map, 22px 22px);
     }
   }
+
+  .logo img {
+    height: auto;
+    max-width: 389px;
+    width: 100%;
+  }
 }
 
 nav.meta {
@@ -299,5 +305,16 @@ section.partners {
   div {
     margin-right: 0;
     vertical-align: middle;
+  }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 640px) {
+  .half-block, .half-inline {
+    @include span-columns(12);
+  }
+  .logo h1 {
+    text-align: center;
   }
 }
