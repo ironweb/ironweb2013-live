@@ -102,7 +102,7 @@ class Ironweb < Sinatra::Base
           company: nil,
           role: :programmer,
         },
-        mysterious1: {
+        asavignac: {
           name: 'Antoine Savignac',
           company: t('sections.folks.from_bordeau'),
           role: :integrator,
@@ -134,7 +134,7 @@ class Ironweb < Sinatra::Base
           company: 'Hookt Studios',
           role: :programmer,
         },
-        mysterious2: {
+        bbort: {
           name: 'Benjamin Bort',
           company: t('sections.folks.from_bordeau'),
           role: :integrator,
