@@ -253,8 +253,14 @@ section.folks {
   }
 }
 
-.judges h4 {
-  font-size:25px;
+.judges {
+  img {
+    max-width: 154px;
+    width: 100%;
+  }
+  h4 {
+    font-size:25px;
+  }
 }
 
 .contestants {
@@ -310,11 +316,32 @@ section.partners {
 
 /* Media Queries */
 
+@media screen and(max-width: 930px) {
+  .contestants .third-block {
+    @include span-columns(6);
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .contestants {
+    text-align: center;
+
+    .details { text-align: left; }
+    .third-block { @include span-columns(12); }
+  }
+}
+
+
 @media screen and (max-width: 640px) {
   .half-block, .half-inline {
     @include span-columns(12);
   }
   .logo h1 {
     text-align: center;
+  }
+  .judge {
+    @include span-columns(6);
+    @include omega(2n);
   }
 }
