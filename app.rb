@@ -162,37 +162,60 @@ class Ironweb < Sinatra::Base
       end
     end
 
-    @hours = cache.fetch('commits', :expire_in => 60 * 60) do
+    @commitsData = cache.fetch('commits', :expire_in => 60 * 60) do
+      hours = {}
+      cstart = Date.new(2013, 2, 19)
+      cend = Date.new(2013, 2, 23)
+      # During or after competition, commits in each repository during competition
+      if Time.now > cstart
+        tsince = cstart
+        tuntil = cend
+        @github_paths = {
+          :reds => ['ironweb', 'rouges'],
+          :greens => ['ironweb', 'verts'],
+        }
+      # Before competition start, last 72 hours commits in this repo
+      else
+        @github_paths = {
+          :reds => ['ironweb', 'ironweb-live'],
+          :greens => ['ironweb', 'ironweb-live'],
+        }
+        tsince = Time.now - 60*60*72
+        tuntil = Time.now
+      end
       github = Github.new do |config|
         config.endpoint    = 'https://api.github.com'
         config.oauth_token = ENV['GITHUB_TOKEN']
         config.adapter     = :net_http
         config.ssl         = {:verify => false} if development?
       end
-      @commits = github.repos.commits.all('ironweb', 'ironweb-live')
-      @hours = []
-      @commits.map! do |reponse|
-        # require 'debugger'
-        # debugger
-        if reponse.commit.committer
-          time = reponse.commit.committer.date
-        else
-          time = reponse.commit.author.date
+      @github_paths.each do |channel, details|
+        user, repo = details
+        team_hours = []
+        commits = github.repos.commits.all(user, repo, since: tsince, until: tuntil)
+        commits.map! do |reponse|
+          # require 'debugger'
+          # debugger
+          if reponse.commit.committer
+            time = reponse.commit.committer.date
+          else
+            time = reponse.commit.author.date
+          end
+          hour = ((Time.parse(time).localtime - Time.now)/60/60).round * -1
+          if team_hours[hour].nil?
+            team_hours[hour] = 1
+          else
+            team_hours[hour] = team_hours[hour] + 1
+          end
         end
-        hour = ((Time.parse(time).localtime - Time.now)/60/60).round * -1
-        if @hours[hour].nil?
-          @hours[hour] = 1
-        else
-          @hours[hour] = @hours[hour] + 1
-        end
+        team_hours.fill { |i| team_hours[i] || 0 }
+        hours[channel] = [{
+          color: '#95b1bd',
+          data: team_hours.reverse
+        }]
       end
-      @hours
+      hours
     end
-    @commitsData = [{
-      name: '',
-      color: '#95b1bd',
-      data: @hours.reverse
-    }]
   end
 
   def rescue_array &block
