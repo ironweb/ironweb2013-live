@@ -166,20 +166,22 @@ header {
 
 nav.meta {
   @include row(block);
-  padding: $baseMargin;
+  padding: $baseMargin / 2;
   padding-right: 0;
   font-size: 0.75rem;
 
   a {
     display: inline-block;
-    padding: 0 $baseMargin / 2;
+    padding: $baseMargin / 2;
   }
 
   .menu-main {
+    float: left;
     color: $lightText;
   }
 
-  .menu-more{
+  .menu-more {
+    float: right;
     text-align: right;
   }
 
@@ -342,6 +344,10 @@ section.partners {
 }
 
 @media screen and (max-width: 680px) {
+  nav.meta {
+    font-size: 1.25rem;
+    .menu-main { display:none; }
+  }
   .half-block, .half-inline {
     @include span-columns(12);
   }

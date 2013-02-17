@@ -36,16 +36,16 @@
 <body>
   <div class="container">
     <nav class="meta">
-      <div class="half-block menu-main">
+      <div class="menu-main">
         <a href="#project"><%= t 'sections.project.title' %></a>
         <a href="#stream"><%= t 'sections.stream.title' %></a>
         <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
         <a href="#events"><%= t 'sections.events.title' %></a>
         <a href="#folks"><%= t 'sections.folks.title' %></a>
         <a href="#partners"><%= t 'sections.partners.title' %></a>
-      </div>
-      <div class="half-block menu-more">
         <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
+      </div>
+      <div class="menu-more">
         <% if I18n.locale == :en %>
           <a class="language" href="/">Français</a>
         <% else %>
