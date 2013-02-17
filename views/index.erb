@@ -133,7 +133,11 @@
         <li class="third-block">
           <span class="img"><%= img "/img/contestants/#{slug}.png", alt: infos[:name] %></span>
           <span class="details">
-            <h4><%= infos[:name] %></h4>
+            <% if infos[:twitter] %>
+              <h4><a target="_blank" href="http://twitter.com/<%= infos[:twitter] %>"><%= infos[:name] %></a></h4>
+            <% else %>
+              <h4><%= infos[:name] %></h4>
+            <% end %>              
             <h5><%= t "roles.#{infos[:role]}" %></h5>
             <% if infos[:company] %>
             <p><%= infos[:company] %></p>
