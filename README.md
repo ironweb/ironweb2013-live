@@ -5,7 +5,7 @@
 ## Getting started
 
     bundle install
-    echo "RACK_ENV=development" > .env
+    cp .env.tmpl .env
     foreman start
 
 ## Contributing
