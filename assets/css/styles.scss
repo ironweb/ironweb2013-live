@@ -86,13 +86,13 @@ h2, h3, h4 {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 4rem;
   color: $blueLight;
   margin-bottom: $baseMargin * 3;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: $blueDark;
   margin-bottom: $baseMargin;
 }
@@ -353,6 +353,9 @@ section.partners {
   }
   .logo h1 {
     text-align: center;
+  }
+  section.about h2 {
+    font-size: 1.8rem;
   }
   .judge {
     @include span-columns(6);
