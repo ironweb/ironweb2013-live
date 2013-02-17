@@ -81,26 +81,31 @@ class Ironweb < Sinatra::Base
           name: 'Alexandre Lefrançois',
           company: 'Image de Mark',
           role: :integrator,
+          twitter: 'enzo_ci'
         },
         ebergeron: {
           name: 'Emilie Bergeron',
           company: ' Vox CG',
           role: :designer,
+          twitter: 'emiliebergeron'
         },
         mpesant: {
           name: 'Mathieu Pesant',
           company: 'Cégep de Sainte-Foy',
           role: :integrator,
+          twitter: 'MathieuPesant'
         },
         sbouchard: {
           name: 'Sylvain Bouchard',
           company: 'Savoir-faire Linux',
           role: :programmer,
+          twitter: 'bouchardsyl'
         },
         ftomalty: {
           name: 'Fletcher Tomalty',
           company: nil,
           role: :programmer,
+          twitter: 'fletom'
         },
         asavignac: {
           name: 'Antoine Savignac',
@@ -113,26 +118,31 @@ class Ironweb < Sinatra::Base
           name: 'Alexia B. Proulx',
           company: 'Cégep de Sainte-Foy',
           role: :integrator_e,
+          twitter: 'Gengenchu'
         },
         cmonchablon: {
           name: 'Cesar Monchablon',
           company: 'Cégep de Sainte-Foy',
           role: :designer,
+          twitter: 'PulseDesign'
         },
         dvanderwindt: {
           name: 'Damien Van Der Windt',
           company: 'Nurun',
           role: :integrator,
+          twitter: 'damienvdw'
         },
         gesanderson: {
           name: 'Gregory Eric Sanderson',
           company: 'Avencall',
           role: :programmer,
+          twitter: 'gelendir'
         },
         jbourassa: {
           name: 'Jimmy Bourassa',
           company: 'Hookt Studios',
           role: :programmer,
+          twitter: 'JimmyBourassa'
         },
         bbort: {
           name: 'Benjamin Bort',
