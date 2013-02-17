@@ -341,16 +341,6 @@ section.partners {
 }
 
 @media screen and (max-width: 680px) {
-  .contestants {
-    text-align: center;
-
-    .details { text-align: left; }
-    .third-block { @include span-columns(12); }
-  }
-}
-
-
-@media screen and (max-width: 640px) {
   .half-block, .half-inline {
     @include span-columns(12);
   }
@@ -360,5 +350,11 @@ section.partners {
   .judge {
     @include span-columns(6);
     @include omega(2n);
+  }
+  .contestants {
+    text-align: center;
+
+    .details { text-align: left; }
+    .third-block { @include span-columns(12); }
   }
 }
