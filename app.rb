@@ -39,86 +39,109 @@ class Ironweb < Sinatra::Base
     js_compression  :jsmin      # Optional
     css_compression :simple       # Optional
   }
-  {:fr => '/', :en => '/en'}.each do |locale, path|    
+  {:fr => '/', :en => '/en/'}.each do |locale, path|
+    @@channels = [:greens, :reds]
+    @@channels.each do |channel|
+      get "#{path}#{channel}" do
+        set_locale locale
+        params[:channel] = channel
+        @title = t 'meta.watching', team: t("meta.#{channel}")
+        set_data
+        erb :index
+      end
+    end
+
     get path do
-      I18n.locale = locale
-      I18n.reload! if development?
-      @channels = [:ironweb_greens, :ironweb_reds]
-      params[:channel] ||= @channels.sample
-
-      @folks = {
-        contestants: {
-          alefrancois: {
-            name: 'Alexandre Lefrançois',
-            company: 'Image de Mark',
-            role: :integrator,
-          },
-          abproulx: {
-            name: 'Alexia B. Proulx',
-            company: 'Cégep de Sainte-Foy',
-            role: :integrator_e,
-          },
-          cmonchablon: {
-            name: 'Cesar Monchablon',
-            company: 'Cégep de Sainte-Foy',
-            role: :designer,
-          },
-          dvanderwindt: {
-            name: 'Damien Van Der Windt',
-            company: 'Nurun',
-            role: :integrator,
-          },
-          ebergeron: {
-            name: 'Emilie Bergeron',
-            company: ' Vox CG',
-            role: :designer,
-          },
-          gesanderson: {
-            name: 'Gregory Eric Sanderson',
-            company: 'Avencall',
-            role: :programmer,
-          },
-          jbourassa: {
-            name: 'Jimmy Bourassa',
-            company: 'Hookt Studios',
-            role: :programmer,
-          },
-          mpesant: {
-            name: 'Mathieu Pesant',
-            company: 'Cégep de Sainte-Foy',
-            role: :integrator,
-          },
-          ftomalty: {
-            name: 'Fletcher Tomalty',
-            company: nil,
-            role: :programmer,
-          },
-          sbouchard: {
-            name: 'Sylvain Bouchard',
-            company: 'Savoir-faire Linux',
-            role: :programmer,
-          },
-          mysterious1: {
-            name: 'Inconnu/Unknown',
-            role: :integrator,
-          },
-          mysterious2: {
-            name: 'Inconnu/Unknown',
-            role: :integrator,
-          },
-        }
-      }
-      @videos = cache.fetch('videos', :expires_in => 120) do
-        Vimeo::Simple::User.videos('webaquebec').parsed_response
-      end
-
-      Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
-      @photos = cache.fetch('photos', :expire_in => 120) do
-        graph = Koala::Facebook::API.new(ENV['OAUTH_ACCESS_TOKEN'])
-        graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
-      end
-
+      set_locale locale
+      @title = t 'meta.title'
+      params[:channel] ||= @@channels.sample
+      set_data
       erb :index
+    end
+  end
+
+  def set_locale locale
+    I18n.locale = locale
+    I18n.reload! if development?
+    params[:locale] = locale
+  end
+
+  def set_data
+    @channels = @@channels
+    @livestream_paths = {
+      :reds => '1888101',
+      :greens => '1888141'
+    }
+    @folks = {
+      contestants: {
+        alefrancois: {
+          name: 'Alexandre Lefrançois',
+          company: 'Image de Mark',
+          role: :integrator,
+        },
+        abproulx: {
+          name: 'Alexia B. Proulx',
+          company: 'Cégep de Sainte-Foy',
+          role: :integrator_e,
+        },
+        cmonchablon: {
+          name: 'Cesar Monchablon',
+          company: 'Cégep de Sainte-Foy',
+          role: :designer,
+        },
+        dvanderwindt: {
+          name: 'Damien Van Der Windt',
+          company: 'Nurun',
+          role: :integrator,
+        },
+        ebergeron: {
+          name: 'Emilie Bergeron',
+          company: ' Vox CG',
+          role: :designer,
+        },
+        gesanderson: {
+          name: 'Gregory Eric Sanderson',
+          company: 'Avencall',
+          role: :programmer,
+        },
+        jbourassa: {
+          name: 'Jimmy Bourassa',
+          company: 'Hookt Studios',
+          role: :programmer,
+        },
+        mpesant: {
+          name: 'Mathieu Pesant',
+          company: 'Cégep de Sainte-Foy',
+          role: :integrator,
+        },
+        ftomalty: {
+          name: 'Fletcher Tomalty',
+          company: nil,
+          role: :programmer,
+        },
+        sbouchard: {
+          name: 'Sylvain Bouchard',
+          company: 'Savoir-faire Linux',
+          role: :programmer,
+        },
+        mysterious1: {
+          name: 'Inconnu/Unknown',
+          role: :integrator,
+        },
+        mysterious2: {
+          name: 'Inconnu/Unknown',
+          role: :integrator,
+        },
+      }
+    }
+    @videos = cache.fetch('videos', :expires_in => 120) do
+      Vimeo::Simple::User.videos('webaquebec').parsed_response
+    end
+
+    Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
+    @photos = cache.fetch('photos', :expire_in => 120) do
+      graph = Koala::Facebook::API.new(ENV['OAUTH_ACCESS_TOKEN'])
+      graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
     end
   end
 end

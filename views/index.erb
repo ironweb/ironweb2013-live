@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta property="og:title" content="<%= t 'meta.title' %>"/>
+  <meta property="og:title" content="<%= @title %>"/>
   <meta property="og:site_name" content="Iron Web 2013"/>
   <meta property="og:description" content="<%= t 'meta.description' %>"/>
   <meta property="og:image" content="/img/share-logo-1.png"/>
@@ -11,7 +11,7 @@
   <meta property="og:image" content="/img/share-logo-3.png"/>
   <%= css :app %>
   <%= js  :app %>
-  <title><%= t 'meta.title' %></title>
+  <title><%= @title %></title>
   <meta name="description" content="<%= t 'meta.description' %>" />
   <script type="text/javascript">
 
@@ -44,7 +44,7 @@
         <% if I18n.locale == :en %>
           <a class="language" href="/">Français</a>
         <% else %>
-          <a class="language" href="/en">English</a>
+          <a class="language" href="/en/">English</a>
         <% end %>
       </div>
     </nav>
@@ -78,15 +78,14 @@
         <h2 class="half-block"><%= t 'sections.stream.title' %></h2>
         <div class="half-block tabs">
           <% @channels.each do |chan| %>        
-            <a href="<%= "#{params[:url]}?channel=#{chan}#stream" %>" class="team reds<%= params[:channel].to_sym == chan ? ' active' : ''%>">
+            <a href="<%= "#{params[:locale] == :fr ? '' : '/'+params[:locale].to_s}/#{chan}#stream" %>" class="team reds<%= params[:channel] == chan ? ' active' : ''%>">
               <%= t "sections.stream.#{chan}" %></a>
           <% end %>
         </div>
       </div>
       <div class="stream">
-        <!--
-          <iframe src="http://cdn.livestream.com/embed/<%= params[:channel] %>?layout=3&autoPlay=true&width=904&height=400" width="904" height="400" style="border:0;outline:0" frameborder=0 scrolling=no></iframe>
-        -->
+        <iframe src="http://new.livestream.com/accounts/75437/events/<%= @livestream_paths[params[:channel]] %>/feed_embed?width=960&height=480"
+          width="960" height="480" frameborder="0" id="feed-embed-stand-alone"></iframe>
       </div>
     </section>
     <section class="feed">
