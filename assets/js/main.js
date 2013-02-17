@@ -1,6 +1,9 @@
 /* main.js */
 $(function () {
   $(document).ready(function() {
+    if(window.location.pathname != '/' && window.location.pathname != '/en/') {
+      window.location = '#stream'
+    }
     chart = new Highcharts.Chart({
       chart: {
         renderTo: 'commits-chart',

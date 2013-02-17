@@ -82,7 +82,7 @@
         <h2 class="half-block"><%= t 'sections.stream.title' %></h2>
         <div class="half-block tabs">
           <% @channels.each do |chan| %>        
-            <a href="<%= "#{params[:locale] == :fr ? '' : '/'+params[:locale].to_s}/#{chan}#stream" %>" class="team reds<%= params[:channel] == chan ? ' active' : ''%>">
+            <a href="<%= "#{params[:locale] == :fr ? '' : '/'+params[:locale].to_s}/#{chan}" %>" class="team reds<%= params[:channel] == chan ? ' active' : ''%>">
               <%= t "sections.stream.#{chan}" %></a>
           <% end %>
         </div>
