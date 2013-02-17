@@ -274,9 +274,11 @@ section.folks {
     height: auto;
     max-width: 154px;
     width: 100%;
+    margin-bottom: $baseMargin / 2;
   }
   h4 {
-    font-size:25px;
+    margin-bottom: $baseMargin / 2;
+    font-size: 2rem;
   }
 }
 
@@ -352,14 +354,26 @@ section.partners {
     font-size: 1.25rem;
     .menu-main { display:none; }
   }
+  section { padding: 1rem; }
+  section.about {
+    padding: 0.5rem;
+    h2 { font-size: 1.8rem; }
+  }
   .half-block, .half-inline {
     @include span-columns(12);
   }
   .logo h1 {
     text-align: center;
   }
-  section.about h2 {
-    font-size: 1.8rem;
+  .commits {
+    .title {
+      @include span-columns(12);
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .commits-chart {
+      @include span-columns(12);
+    }
   }
   .judge {
     @include span-columns(6);
