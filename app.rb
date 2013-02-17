@@ -111,6 +111,7 @@ class Ironweb < Sinatra::Base
           name: 'Antoine Savignac',
           company: t('sections.folks.from_bordeau'),
           role: :integrator,
+          twitter: 'AntoineSavignac'
         },
       },
       reds: {
