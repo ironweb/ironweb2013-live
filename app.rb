@@ -137,14 +137,14 @@ class Ironweb < Sinatra::Base
         },
       }
     }
-    @videos = cache.fetch('videos', :expires_in => 10) do
+    @videos = cache.fetch('videos', :expires_in => 60 * 30) do
       rescue_array do
         Vimeo::Simple::User.videos('webaquebec').parsed_response
       end
     end
 
     Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
-    @photos = cache.fetch('photos', :expire_in => 10) do
+    @photos = cache.fetch('photos', :expire_in => 60 * 5) do
       rescue_array do
         oauth = @oauth = Koala::Facebook::OAuth.new(ENV['FB_APP_ID'], ENV['FB_APP_SECRET'])
         graph = Koala::Facebook::API.new(oauth.get_app_access_token)
@@ -152,7 +152,7 @@ class Ironweb < Sinatra::Base
       end
     end
 
-    @hours = cache.fetch('commits', :expire_in => 10) do
+    @hours = cache.fetch('commits', :expire_in => 60 * 60) do
       github = Github.new do |config|
         config.endpoint    = 'https://api.github.com'
         config.oauth_token = ENV['GITHUB_TOKEN']
