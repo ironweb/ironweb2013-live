@@ -240,6 +240,13 @@ section.stream {
   }
 }
 
+section.feed {
+  .event {
+    font-family: miso;
+    font-size: 1.4rem;
+  }
+}
+
 section.about {
   @include linear-gradient(270deg, #0b4359 0%, #165871 30%, #165871 31%, #165871 100%);
   padding:$baseMargin * 2;

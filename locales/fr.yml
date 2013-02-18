@@ -11,6 +11,13 @@ fr:
     description: |
       Le Iron Web est une compétition de type «web réalité».
       Les participants devront concevoir un site web extraordinaire en 3 jours qui épatera le jury et le public.
+  events:
+    event1:
+      time: Mercredi 9h30
+      title: Annonce du projet
+    event2:
+      time: Mercredi 10h00
+      title: Début de la diffusion
   nav:
     contact: Contactez-nous
   headlines:

@@ -17,6 +17,13 @@ en:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
     time: 3 days live
+  events:
+    event1:
+      time: Wednesday 9:30
+      title: Project details announcement
+    event2:
+      time: Wednesday 10:00
+      title: Live streaming start
   sections:
     medias:
       title: Photos and videos
