@@ -1,5 +1,6 @@
 fr:
   commits_per_hour: Commits / heure
+  commits_about: "Commits : contributions au code source du projet par les développeurs de l'équipe qui sont transmisent aux serveurs de <a href=\"http://github.com\">Github</a>."
   unavailable: Indisponible.
   coming: À venir bientôt!
   meta:
@@ -9,13 +10,20 @@ fr:
     greens: verts
     description: |
       Le Iron Web est une compétition de type «web réalité».
-      Les participants devront concevoir un site web extraordinaire en 72 heures qui épatera le jury et le public.
+      Les participants devront concevoir un site web extraordinaire en 3 jours qui épatera le jury et le public.
+  events:
+    event1:
+      time: Mercredi 9h30
+      title: Annonce du projet
+    event2:
+      time: Mercredi 10h00
+      title: Début de la diffusion
   nav:
     contact: Contactez-nous
   headlines:
     location: Espace 400e Bell, Québec
     dates: Du 20 au 22 février 2013
-    time: 72 heures en direct
+    time: 3 jours en direct
   sections:
     medias:
       title: Photos et vidéos
@@ -25,7 +33,7 @@ fr:
     events:
       title: Événements
     stream:
-      title: Le stream
+      title: Les streams
       reds: Rouges
       greens: Verts
     folks:
@@ -37,15 +45,16 @@ fr:
       from_bordeau: de Bordeau, France
     project:
       title: Le projet à réaliser
-      facebook: Suivez-nous sur Facebook pour le savoir en premier!
+      facebook: Suivez-nous sur Facebook pour être les premiers informés !
       text: |
-        Le projet sera annoncé autour de 9h30 le 20 février prochain!
+        Le projet sera annoncé autour de 9 h 30 le 20 février prochain !
     about:
-      title: C'est quoi le Iron Web?
+      title: Le Iron Web, c’est quoi ?
       text: |
-        C'est une compétition de 72 heures pour développer une application web qui se
-        tiendra pour une 3e année durant le Web à Québec à l'Espace 400e
-        Bell et qui vous invite à littéralement entrer dans le monde de la conception web!
+        C'est une compétition de 3 jours qui se tiendra pour une troisième année en parallèle WaQ.
+        L’objectif : développer une application web. En direct de l’Espace 400e Bell, deux équipes
+        mettront leur imagination et leur talent à l’épreuve pour relever ce défi. Diffusé en ligne sur
+        Livestream, le Iron Web est votre entrée dans le monde de la conception web !
     partners:
       title: Nos partenaires
   roles:
@@ -53,3 +62,9 @@ fr:
     integrator_e: Intégratrice
     designer: Designer
     programmer: Programmeur
+  footer: |
+    <p>Réalisé 3 jours avant les 3 jours du Iron Web par
+    <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, responsable du Iron Web.</p>
+  github: |
+    <p>Si vous trouvez des problèmes ou souhaitez améliorer le site, faites un
+      <a target"_blank" href="http://github.com/ironweb/ironweb-live"><em>pull request</em></a>.</p>

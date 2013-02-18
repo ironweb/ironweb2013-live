@@ -6,13 +6,18 @@
   <meta property="og:title" content="<%= @title %>"/>
   <meta property="og:site_name" content="Iron Web 2013"/>
   <meta property="og:description" content="<%= t 'meta.description' %>"/>
-  <meta property="og:image" content="/img/share-logo-1.png"/>
-  <meta property="og:image" content="/img/share-logo-2.png"/>
-  <meta property="og:image" content="/img/share-logo-3.png"/>
+  <% if request.path != '/' %>
+    <meta property="og:image" content="<%= "/img/badges/#{params[:channel]}_#{params[:locale]}.png" %>"/>
+  <% else %>
+    <meta property="og:image" content="/img/share-logo-1.png"/>
+    <meta property="og:image" content="/img/share-logo-2.png"/>
+    <meta property="og:image" content="/img/share-logo-3.png"/>
+  <% end %>
+  <meta name="viewport" content="width=device-width">
   <%= css :app %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript">
-  var commitsData = <%= @commitsData.to_json %>
+  var commitsData = <%= @commitsData[params[:channel]].to_json %>
   </script>
   <%= js  :app %>
   <title><%= @title %></title>
@@ -35,16 +40,18 @@
 <body>
   <div class="container">
     <nav class="meta">
-      <div class="half-block menu-main">
+      <div class="menu-main">
         <a href="#project"><%= t 'sections.project.title' %></a>
         <a href="#stream"><%= t 'sections.stream.title' %></a>
-        <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
         <a href="#events"><%= t 'sections.events.title' %></a>
+        <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
         <a href="#folks"><%= t 'sections.folks.title' %></a>
+        <% if ENV['SHOW_PARTNERS'] %>
         <a href="#partners"><%= t 'sections.partners.title' %></a>
-      </div>
-      <div class="half-block menu-more">
+        <% end %>
         <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
+      </div>
+      <div class="menu-more">
         <% if I18n.locale == :en %>
           <a class="language" href="/">Français</a>
         <% else %>
@@ -81,13 +88,13 @@
       <div class="row">
         <h2 class="half-block"><%= t 'sections.stream.title' %></h2>
         <div class="half-block tabs">
-          <% @channels.each do |chan| %>        
+          <% @channels.each do |chan| %>
             <a href="<%= "#{params[:locale] == :fr ? '' : '/'+params[:locale].to_s}/#{chan}" %>" class="team reds<%= params[:channel] == chan ? ' active' : ''%>">
               <%= t "sections.stream.#{chan}" %></a>
           <% end %>
         </div>
       </div>
-      <div class="stream">
+      <div class="stream-wrap">
         <iframe src="http://new.livestream.com/accounts/75437/events/<%= @livestream_paths[params[:channel]] %>/feed_embed?width=960&height=480"
           width="960" height="480" frameborder="0" id="feed-embed-stand-alone"></iframe>
       </div>
@@ -95,6 +102,7 @@
         <div class="title"><%= t 'commits_per_hour' %></div>
         <div id="commits-chart"></div>
       </div>
+      <p class="commits-about"><%= t 'commits_about' %></p>
     </section>
     <section class="feed">
       <div class="half-block" id="medias">
@@ -120,7 +128,11 @@
       </div>
       <div class="half-block" id="events">
         <h2><%= t 'sections.events.title' %></h2>
-        <p><%= t 'coming' %></p>
+        <h3><%= t 'events.event1.time' %></h3>
+        <p class="event"><%= t 'events.event1.title' %></p>
+
+        <h3><%= t 'events.event2.time' %></h3>
+        <p class="event"><%= t 'events.event2.title' %></p>
       </div>
     </section>
     <section class="folks" id="folks">
@@ -137,7 +149,7 @@
               <h4><a target="_blank" href="http://twitter.com/<%= infos[:twitter] %>"><%= infos[:name] %></a></h4>
             <% else %>
               <h4><%= infos[:name] %></h4>
-            <% end %>              
+            <% end %>
             <h5><%= t "roles.#{infos[:role]}" %></h5>
             <% if infos[:company] %>
             <p><%= infos[:company] %></p>
@@ -151,27 +163,28 @@
       <h3 class="center folks-jury"><%= t 'sections.folks.jury' %></h3>
       <div class="judges">
         <div class="judge quarter-block">
-          <%= img '/img/jury/dgupta.jpg', alt: 'Davender Gupta' %>
+          <%= img '/img/jury/dgupta.png', alt: 'Davender Gupta' %>
           <h4>Davender Gupta</h4>
           <p><a href="http://twitter.com/coachdavender">@coachdavender</a></p>
         </div>
         <div class="judge quarter-block">
-          <%= img '/img/jury/jfournier.jpg', alt: 'Davender Gupta' %>
+          <%= img '/img/jury/jfournier.png', alt: 'Davender Gupta' %>
           <h4>Joanne Fournier</h4>
           <p><a href="http://twitter.com/jfournier">@jfournier</a></p>
         </div>
         <div class="judge quarter-block">
-          <%= img '/img/jury/sgarneau.jpg', alt: 'Davender Gupta' %>
+          <%= img '/img/jury/sgarneau.png', alt: 'Davender Gupta' %>
           <h4>Samuel Garneau</h4>
           <p><a href="http://twitter.com/garno">@garno</a></p>
         </div>
-        <div class="judg quarter-block">
-          <%= img '/img/jury/palalonde.jpg', alt: 'Pierre-Armand Lalonde' %>
+        <div class="judge quarter-block">
+          <%= img '/img/jury/palalonde.png', alt: 'Pierre-Armand Lalonde' %>
           <h4>Pierre-Armand Lalonde</h4>
           <p><a href="http://twitter.com/palalonde">@palalonde</a></p>
         </div>
       </div>
     </section>
+    <% if ENV['SHOW_PARTNERS'] %>
     <section class="partners" id="partners">
       <h2><%= t 'sections.partners.title' %></h2>
       <div class="partners-logos">
@@ -187,6 +200,13 @@
         </div>
       </div>
     </section>
+    <% end %>
+    <footer>
+      <%= t 'footer' %>
+      <% if ENV['SHOW_PARTNERS'] %>
+      <%= t 'github' %>
+      <% end %>
+    </footer>
   </div>
 </body>
 </html>

@@ -22,6 +22,8 @@ $blueDark: #71909c;
 $lightText: #afd9ea;
 $lightTitle: #b3cfd9;
 $darkText: #367c97;
+$greyText: #777;
+$greyLightText: #999;
 $baseMargin: 1.0rem;
 
 /* Grid */
@@ -86,13 +88,13 @@ h2, h3, h4 {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 4rem;
   color: $blueLight;
   margin-bottom: $baseMargin * 3;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: $blueDark;
   margin-bottom: $baseMargin;
 }
@@ -156,24 +158,44 @@ header {
       @include retina-image(/img/map, 22px 22px);
     }
   }
+
+  .logo img {
+    height: auto;
+    max-width: 389px;
+    width: 100%;
+  }
+}
+
+footer {
+  padding: $baseMargin;
+
+  p,
+  p a {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: $greyLightText;
+  }
 }
 
 nav.meta {
   @include row(block);
-  padding: $baseMargin;
+  padding: $baseMargin / 2;
   padding-right: 0;
   font-size: 0.75rem;
 
   a {
     display: inline-block;
-    padding: 0 $baseMargin / 2;
+    padding: $baseMargin / 2;
   }
 
   .menu-main {
+    float: left;
     color: $lightText;
   }
 
-  .menu-more{
+  .menu-more {
+    float: right;
     text-align: right;
   }
 
@@ -184,6 +206,7 @@ nav.meta {
 
 section.stream {
   background: none;
+  border-top: 0;
 
   .tabs {
     text-align: right;
@@ -202,6 +225,26 @@ section.stream {
       color: #71909c;
     }
   }
+
+  h2 { margin-bottom: 0; }
+}
+
+.stream-wrap {
+  border: 1px solid #d4dde1;
+  padding-top: 3rem;
+  clear: both;
+
+  iframe {
+    display: block;
+    width: 100%;
+  }
+}
+
+section.feed {
+  .event {
+    font-family: miso;
+    font-size: 1.4rem;
+  }
 }
 
 section.about {
@@ -214,25 +257,32 @@ section.about {
   }
 
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     margin-bottom: $baseMargin * 2;
     color: #fff;
   }
 }
 
 .commits {
+  padding-top: $baseMargin;
   font-size:0;
   .title {
-    @include span-columns(1, inline-block);
+    text-align: center;
     font-family: miso;
     font-size:1.25rem;
     color: $darkText;
-    vertical-align: baseline;
   }
 }
 
+.commits-about,
+.commits-about a {
+  color: $greyText;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 #commits-chart {
-  @include span-columns(11, inline-block);
   vertical-align: baseline;
 }
 
@@ -247,8 +297,17 @@ section.folks {
   }
 }
 
-.judges h4 {
-  font-size:25px;
+.judges {
+  img {
+    height: auto;
+    max-width: 154px;
+    width: 100%;
+    margin-bottom: $baseMargin / 2;
+  }
+  h4 {
+    margin-bottom: $baseMargin / 2;
+    font-size: 2rem;
+  }
 }
 
 .contestants {
@@ -291,6 +350,7 @@ section.folks {
 
 section.partners {
   a {
+    display:inline-block;
     padding: $baseMargin / 2;
   }
   img {
@@ -299,5 +359,51 @@ section.partners {
   div {
     margin-right: 0;
     vertical-align: middle;
+  }
+}
+
+/* Media Queries */
+
+@media screen and(max-width: 930px) {
+  .contestants .third-block {
+    @include span-columns(6);
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stream-wrap { padding-top: 0;}
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.8rem; }
+}
+
+@media screen and (max-width: 680px) {
+  nav.meta {
+    font-size: 1.25rem;
+    .menu-main { display:none; }
+  }
+  section { padding: 1rem; }
+  section.about {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    h2 { font-size: 1.8rem; }
+  }
+  section.stream h2 { margin-bottom: $baseMargin; }
+  .half-block, .half-inline {
+    @include span-columns(12);
+  }
+  .logo h1 {
+    text-align: center;
+  }
+  .judge {
+    @include span-columns(12, inline-block);
+    text-align:center;
+  }
+  .contestants {
+    .details { text-align: left; }
+    .third-block {
+      @include span-columns(12, inline-block);
+      text-align:center;
+    }
   }
 }

@@ -1,5 +1,6 @@
 en:
   commits_per_hour: Commits / hour
+  commits_about: "Commits : contribution made by team developers to the source code sent to <a href=\"http://github.com\">Github</a> servers."
   unavailable: Unavailable.
   coming: "Coming soon!"
   meta:
@@ -9,13 +10,20 @@ en:
     greens: green
     description: |
       The Iron Web is a «web reality» competition.
-      Contestants are building an awesome web app within 72 hours while you are watching!
+      Contestants are building an awesome web app within 3 days while you are watching!
   nav:
     contact: Contact us
   headlines:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
-    time: 72 hours live
+    time: 3 days live
+  events:
+    event1:
+      time: Wednesday 9:30
+      title: Project details announcement
+    event2:
+      time: Wednesday 10:00
+      title: Live streaming start
   sections:
     medias:
       title: Photos and videos
@@ -25,7 +33,7 @@ en:
     events:
       title: Events
     stream:
-      title: The stream
+      title: The streams
       reds: Reds
       greens: Greens
     folks:
@@ -43,8 +51,8 @@ en:
     about:
       title: What is the Iron Web?
       text: |
-        It's a competition that let you to enter the world of a team of web development
-        during 3 days in a unique way. Watch the 2 teams of professionnals & student
+        It's a competition that let you enter the world of a web development team
+        during three days. Watch the two teams of professionals and students
         web selected compete to build the best application during the Web à Québec at Espace 400e Bell.
     partners:
       title: Our partners
@@ -53,3 +61,9 @@ en:
     integrator_e: Integrator
     designer: Designer
     programmer: Developer
+  footer: |
+    <p>Made in the 3 days prior to the Iron Web 3 days by
+      <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
+  github: |
+    <p>If you discover any issue or would like to improve the website, please open a 
+      <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
