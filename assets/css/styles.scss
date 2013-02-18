@@ -378,11 +378,14 @@ section.partners {
     }
   }
   .judge {
-    @include span-columns(6);
-    @include omega(2n);
+    @include span-columns(12, inline-block);
+    text-align:center;
   }
   .contestants {
     .details { text-align: left; }
-    .third-block { @include span-columns(12); }
+    .third-block {
+      @include span-columns(12, inline-block);
+      text-align:center;
+    }
   }
 }
