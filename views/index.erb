@@ -201,7 +201,12 @@
       </div>
     </section>
     <% end %>
-    <footer><%= t 'footer' %></footer>
+    <footer>
+      <%= t 'footer' %>
+      <% if ENV['SHOW_PARTNERS'] %>
+      <%= t 'github' %>
+      <% end %>
+    </footer>
   </div>
 </body>
 </html>

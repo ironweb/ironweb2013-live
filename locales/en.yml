@@ -63,5 +63,6 @@ en:
   footer: |
     <p>Made in the 3 days prior to the Iron Web 3 days by
       <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
+  github: |
     <p>If you discover any issue or would like to improve the website, please open a 
       <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
