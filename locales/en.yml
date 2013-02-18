@@ -10,13 +10,13 @@ en:
     greens: green
     description: |
       The Iron Web is a «web reality» competition.
-      Contestants are building an awesome web app within 72 hours while you are watching!
+      Contestants are building an awesome web app within 3 days while you are watching!
   nav:
     contact: Contact us
   headlines:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
-    time: 72 hours live
+    time: 3 days live
   sections:
     medias:
       title: Photos and videos
@@ -54,7 +54,7 @@ en:
     designer: Designer
     programmer: Developer
   footer: |
-    <p>Made in the 72 hours prior to the Iron Web 72 hours by
+    <p>Made in the 3 days prior to the Iron Web 3 days by
       <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
     <p>If you discover any issue or would like to improve the website, please open a 
       <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
