@@ -356,7 +356,8 @@ section.partners {
   }
   section { padding: 1rem; }
   section.about {
-    padding: 0.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
     h2 { font-size: 1.8rem; }
   }
   section.stream h2 { margin-bottom: $baseMargin; }
