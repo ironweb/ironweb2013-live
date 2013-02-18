@@ -10,10 +10,16 @@ $(function () {
         type: 'column',
         height: 120
       },
+      credits : {
+        enabled : false
+      },
       title: {
         text: null
       },
       legend: {
+        enabled: false
+      },
+      tooltip: {
         enabled: false
       },
       xAxis: {
