@@ -359,6 +359,7 @@ section.partners {
     padding: 0.5rem;
     h2 { font-size: 1.8rem; }
   }
+  section.stream h2 { margin-bottom: $baseMargin; }
   .half-block, .half-inline {
     @include span-columns(12);
   }
