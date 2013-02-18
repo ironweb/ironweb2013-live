@@ -22,6 +22,8 @@ $blueDark: #71909c;
 $lightText: #afd9ea;
 $lightTitle: #b3cfd9;
 $darkText: #367c97;
+$greyText: #777;
+$greyLightText: #999;
 $baseMargin: 1.0rem;
 
 /* Grid */
@@ -164,6 +166,18 @@ header {
   }
 }
 
+footer {
+  padding: $baseMargin;
+
+  p,
+  p a {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: $greyLightText;
+  }
+}
+
 nav.meta {
   @include row(block);
   padding: $baseMargin / 2;
@@ -255,7 +269,7 @@ section.about {
 
 .commits-about,
 .commits-about a {
-  color: #777;
+  color: $greyText;
   text-align: center;
   font-style: italic;
   font-size: 0.8rem;

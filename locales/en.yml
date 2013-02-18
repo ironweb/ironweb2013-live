@@ -53,3 +53,8 @@ en:
     integrator_e: Integrator
     designer: Designer
     programmer: Developer
+  footer: |
+    <p>Made in the 72 hours prior to the Iron Web 72 hours by
+      <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
+    <p>If you discover any issue or would like to improve the website, please open a 
+      <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
