@@ -42,7 +42,9 @@
         <a href="#events"><%= t 'sections.events.title' %></a>
         <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
         <a href="#folks"><%= t 'sections.folks.title' %></a>
+        <% if ENV['SHOW_PARTNERS'] %>
         <a href="#partners"><%= t 'sections.partners.title' %></a>
+        <% end %>
         <a href="mailto:ironweb@webaquebec.org"><%= t 'nav.contact' %></a>
       </div>
       <div class="menu-more">
@@ -173,6 +175,7 @@
         </div>
       </div>
     </section>
+    <% if ENV['SHOW_PARTNERS'] %>
     <section class="partners" id="partners">
       <h2><%= t 'sections.partners.title' %></h2>
       <div class="partners-logos">
@@ -188,6 +191,7 @@
         </div>
       </div>
     </section>
+    <% end %>
   </div>
 </body>
 </html>
