@@ -2,7 +2,6 @@ ruby '1.9.3'
 source 'https://rubygems.org'
 
 # Server
-gem 'unicorn'
 gem 'thin'
 
 # Heroku
@@ -13,6 +12,8 @@ gem 'sinatra'
 gem 'sinatra-contrib',
   :require => 'sinatra/reloader'
 gem 'sinatra-assetpack'
+gem 'sinatra-synchrony',
+  :require => 'sinatra/synchrony'
 gem 'rake'
 gem 'sass'
 gem 'i18n'
