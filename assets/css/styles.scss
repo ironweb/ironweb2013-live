@@ -253,6 +253,14 @@ section.about {
   }
 }
 
+.commits-about,
+.commits-about a {
+  color: #777;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 #commits-chart {
   @include span-columns(11, inline-block);
   vertical-align: baseline;

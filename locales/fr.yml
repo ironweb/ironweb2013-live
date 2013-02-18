@@ -1,5 +1,6 @@
 fr:
   commits_per_hour: Commits / heure
+  commits_about: "Commits : contributions au code source du projet par les développeurs de l'équipe qui sont transmisent aux serveurs de <a href=\"http://github.com\">Github</a>."
   unavailable: Indisponible.
   coming: À venir bientôt!
   meta:
