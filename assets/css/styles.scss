@@ -264,13 +264,13 @@ section.about {
 }
 
 .commits {
+  padding-top: $baseMargin;
   font-size:0;
   .title {
-    @include span-columns(1, inline-block);
+    text-align: center;
     font-family: miso;
     font-size:1.25rem;
     color: $darkText;
-    vertical-align: baseline;
   }
 }
 
@@ -283,7 +283,6 @@ section.about {
 }
 
 #commits-chart {
-  @include span-columns(11, inline-block);
   vertical-align: baseline;
 }
 
@@ -395,16 +394,6 @@ section.partners {
   }
   .logo h1 {
     text-align: center;
-  }
-  .commits {
-    .title {
-      @include span-columns(12);
-      padding-top: 1rem;
-      text-align: center;
-    }
-    .commits-chart {
-      @include span-columns(12);
-    }
   }
   .judge {
     @include span-columns(12, inline-block);
