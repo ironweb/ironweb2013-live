@@ -44,17 +44,47 @@ fr:
       jury: Les juges
       from_bordeau: de Bordeau, France
     project:
-      title: Le projet à réaliser
+      title: "Mission : Open311 à Québec"
       facebook: Suivez-nous sur Facebook pour être les premiers informés !
       text: |
-        Le projet sera annoncé autour de 9 h 30 le 20 février prochain !
+        <p>L'an dernier, les équipes du Iron Web ont utilisé les données de la ville pour
+        réaliser leur application. Cette année, nous souhaitons aller un peu plus loin!</p>
+        
+        <p>Les participants vont vous permettre d'envoyer vos données à la ville.</p>
+        
+        <p>Grâce à <a href="http://open311.org/">Open311</a>, un standard qui permet aux villes de recevoir des
+        demandes de la part des citoyens (signaler des graffitis, des bris divers, etc), 
+        vous pourrez à l'issu du Iron Web envoyer directement via le web des demandes
+        à la ville de Québec.
+        </p>
+        
+        <p>Implanté par San Francisco, Chicago, Boston et plusieurs autres grandes villes,
+        la Ville de Québec sera la première ville francophone à implanter le système.
+        </p>
+        
+        <p>Cette année, la ville de Québec demande donc aux participants de réaliser une
+        application web multiplateforme (mobile, tablette, bureau) qui permettra
+        aux citoyens d'envoyer leurs demandes dans le système Open311.
+        </p>
+        
+        <p>De plus, la meilleure plateforme sera reprise par le
+        département des technologies de la ville de Québec pour réaliser
+        l'application officielle de la ville. Elle sera également mise libre de droits
+        sous licence MIT afin de permettre à d'autres villes de l'utiliser.</p>
     about:
       title: Le Iron Web, c’est quoi ?
       text: |
-        C'est une compétition de 3 jours qui se tiendra pour une troisième année en parallèle WaQ.
-        L’objectif : développer une application web. En direct de l’Espace 400e Bell, deux équipes
-        mettront leur imagination et leur talent à l’épreuve pour relever ce défi. Diffusé en ligne sur
-        Livestream, le Iron Web est votre entrée dans le monde de la conception web !
+        <p>C'est une compétition de 3 jours qui se tient pour une troisième année en parallèle 
+          du <a href="http://webaquebec.org">Web à Québec</a>.
+        <p>L’objectif : développer une application web. En direct de l’Espace 400e Bell, deux équipes
+          mettront leur imagination et leur talent à l’épreuve pour relever ce défi.</p>
+        <p>Visionnez en direct le travail des 2 équipes de 6 professionnels de
+          différents métiers du web (designer, intégrateurs, programmeurs, etc) réaliser leur
+          projet de la conception à la production jusqu'à la livraison et même la présentation
+          au public lors de la clôture du WAQ.</p>
+        <p>C'est un rendez-vous, 24h sur 24h, à partir de mercredi le 20 février 10h00 pour
+          découvrir en quoi les professionnels du web font un métier créatif et diversifié qui
+          ne se limite pas à taper sur des claviers!</p>
     partners:
       title: Nos partenaires
   roles:
