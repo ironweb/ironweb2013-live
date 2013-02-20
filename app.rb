@@ -163,7 +163,8 @@ class Ironweb < Sinatra::Base
       rescue_array do
         oauth = @oauth = Koala::Facebook::OAuth.new(ENV['FB_APP_ID'], ENV['FB_APP_SECRET'])
         graph = Koala::Facebook::API.new(oauth.get_app_access_token)
-        graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
+        photos = graph.get_object("/#{ENV['FB_ALBUM_ID']}/photos?fields=picture,link,width,height")
+        photos.reject { |p| p['height'] > p['width'] }
       end
     end
 
