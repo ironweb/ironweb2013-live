@@ -109,7 +109,7 @@ class Ironweb < Sinatra::Base
         },
         asavignac: {
           name: 'Antoine Savignac',
-          company: t('sections.folks.from_bordeau'),
+          company: t('sections.folks.from_bordeaux'),
           role: :integrator,
           twitter: 'AntoineSavignac'
         },
@@ -147,7 +147,7 @@ class Ironweb < Sinatra::Base
         },
         bbort: {
           name: 'Benjamin Bort',
-          company: t('sections.folks.from_bordeau'),
+          company: t('sections.folks.from_bordeaux'),
           role: :integrator,
         },
       }
