@@ -178,7 +178,7 @@ class Ironweb < Sinatra::Base
         tuntil = cend
         @github_paths = {
           :reds => ['ironweb', 'rouges'],
-          :greens => ['ironweb', 'verts-backend'],
+          :greens => ['ironweb', 'verts-frontend'],
         }
       # Before competition start, last 72 hours commits in this repo
       else
