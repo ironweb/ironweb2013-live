@@ -1,16 +1,16 @@
 fr:
   commits_per_hour: Commits / heure
-  commits_about: "Commits : contributions au code source du projet par les développeurs de l'équipe qui sont transmisent aux serveurs de <a href=\"http://github.com\">Github</a>."
+  commits_about: "Commits : contributions au code source du projet par les développeurs de l'équipe qui sont transmises aux serveurs de <a href=\"http://github.com\">Github</a>."
   unavailable: Indisponible.
   coming: À venir bientôt!
   meta:
     title: Iron Web 2013 au Web à Québec
-    watching: "Suivez l'équipe des %{team} au Iron Web 2013!"
-    reds: rouges
-    greens: verts
+    watching: "Suivez l'équipe des %{team} au Iron Web 2013 !"
+    reds: Rouges
+    greens: Verts
     description: |
-      Le Iron Web est une compétition de type «web réalité».
-      Les participants devront concevoir un site web extraordinaire en 3 jours qui épatera le jury et le public.
+      Le Iron Web est une compétition de type « Web réalité ».
+      Les participants devront concevoir un site Web extraordinaire qui épatera le jury et le public, en 3 jours
   events:
     event1:
       time: Mercredi 9h30
@@ -39,18 +39,18 @@ fr:
     folks:
       title: Les gens
       contestants: Les participants
-      reds: Les rouges
-      greens: Les verts
+      reds: Les Rouges
+      greens: Les Verts
       jury: Les juges
     project:
       title: Le projet à réaliser
-      facebook: Suivez-nous sur Facebook pour être les premiers informés !
+      facebook: Suivez-nous sur Facebook pour être les premiers informés!
       text: |
-        Le projet sera annoncé autour de 9 h 30 le 20 février prochain !
+        Le projet sera annoncé autour de 9 h 30 le 20 février prochain!
     about:
-      title: Le Iron Web, c’est quoi ?
+      title: Le Iron Web, c’est quoi?
       text: |
-        C'est une compétition de 3 jours qui se tiendra pour une troisième année en parallèle du WaQ.
+        C'est une compétition de 3 jours qui se tiendra pour une troisième année en parallèle du WAQ.
         L’objectif : développer une application web. En direct de l’Espace 400e Bell, deux équipes
         mettent leur imagination et leur talent à l’épreuve pour relever ce défi. Diffusé en ligne sur
         Livestream, le Iron Web est votre entrée dans le monde de la conception web !

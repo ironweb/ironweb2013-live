@@ -6,17 +6,17 @@ en:
   meta:
     title: Iron Web 2013 at Web à Québec
     watching: "Watch the %{team} team at Iron Web 2013!"
-    reds: red
-    greens: green
+    reds: Red
+    greens: Green
     description: |
-      The Iron Web is a «web reality» competition.
-      Contestants are building an awesome web app within 3 days while you are watching!
+      The Iron Web is a Web reality competition.
+      Contestants have to build an awesome web app within 3 days, while you are watching!
   nav:
     contact: Contact us
   headlines:
     location: Espace 400e Bell, Quebec
     dates: February 20 to 22, 2013
-    time: 3 days live
+    time: 3-day live competition
   events:
     event1:
       time: Wednesday 9:30
@@ -46,13 +46,14 @@ en:
       title: The project
       facebook: Follow us on Facebook to get the news first!
       text: |
-        This year project will be announced around 9:30 on the 20 of February!
+        This year’s project will be annonced around 9:30, on February 20!
     about:
-      title: What is the Iron Web?
+      title: What’s the Iron Web?
       text: |
-        It's a competition that let you enter the world of a web development team
-        during three days. Watch the two teams of professionals and students
-        web selected compete to build the best application during the Web à Québec at Espace 400e Bell.
+        It's a competition that will immerse you into the world of a Web development team for
+        three consecutive days. Watch the two teams of professionals and students selected
+        through the Web as they compete to build the best application. This will be held
+        in parallel with the Web à Québec, at Espace 400e Bell.
     partners:
       title: Our partners
   roles:
@@ -61,8 +62,8 @@ en:
     designer: Designer
     programmer: Developer
   footer: |
-    <p>Made in the 3 days prior to the Iron Web 3 days by
+    <p>Made in the 3 days prior to the 72-hour Iron Web competition by
       <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
   github: |
-    <p>If you discover any issue or would like to improve the website, please open a 
+    <p>If you discover any issue or would like to improve the Website, please open a
       <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
