@@ -76,13 +76,45 @@ class Ironweb < Sinatra::Base
       :greens => '1888141'
     }
     @folks = {
-      contestants: {
+      greens: {
         alefrancois: {
           name: 'Alexandre Lefrançois',
           company: 'Image de Mark',
           role: :integrator,
           twitter: 'enzo_ci'
         },
+        ebergeron: {
+          name: 'Emilie Bergeron',
+          company: ' Vox CG',
+          role: :designer,
+          twitter: 'emiliebergeron'
+        },
+        mpesant: {
+          name: 'Mathieu Pesant',
+          company: 'Cégep de Sainte-Foy',
+          role: :integrator,
+          twitter: 'MathieuPesant'
+        },
+        sbouchard: {
+          name: 'Sylvain Bouchard',
+          company: 'Savoir-faire Linux',
+          role: :programmer,
+          twitter: 'bouchardsyl'
+        },
+        ftomalty: {
+          name: 'Fletcher Tomalty',
+          company: nil,
+          role: :programmer,
+          twitter: 'fletom'
+        },
+        asavignac: {
+          name: 'Antoine Savignac',
+          company: t('sections.folks.from_bordeau'),
+          role: :integrator,
+          twitter: 'AntoineSavignac'
+        },
+      },
+      reds: {
         abproulx: {
           name: 'Alexia B. Proulx',
           company: 'Cégep de Sainte-Foy',
@@ -101,12 +133,6 @@ class Ironweb < Sinatra::Base
           role: :integrator,
           twitter: 'damienvdw'
         },
-        ebergeron: {
-          name: 'Emilie Bergeron',
-          company: ' Vox CG',
-          role: :designer,
-          twitter: 'emiliebergeron'
-        },
         gesanderson: {
           name: 'Gregory Eric Sanderson',
           company: 'Avencall',
@@ -119,30 +145,9 @@ class Ironweb < Sinatra::Base
           role: :programmer,
           twitter: 'JimmyBourassa'
         },
-        mpesant: {
-          name: 'Mathieu Pesant',
-          company: 'Cégep de Sainte-Foy',
-          role: :integrator,
-          twitter: 'MathieuPesant'
-        },
-        ftomalty: {
-          name: 'Fletcher Tomalty',
-          company: nil,
-          role: :programmer,
-          twitter: 'fletom'
-        },
-        sbouchard: {
-          name: 'Sylvain Bouchard',
-          company: 'Savoir-faire Linux',
-          role: :programmer,
-          twitter: 'bouchardsyl'
-        },
-        mysterious1: {
-          name: 'Inconnu/Unknown',
-          role: :integrator,
-        },
-        mysterious2: {
-          name: 'Inconnu/Unknown',
+        bbort: {
+          name: 'Benjamin Bort',
+          company: t('sections.folks.from_bordeau'),
           role: :integrator,
         },
       }

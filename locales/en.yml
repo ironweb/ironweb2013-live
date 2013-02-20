@@ -42,18 +42,33 @@ en:
       reds: The reds
       greens: The greens
       jury: The jury
+      from_bordeau: from Bordeau, France
     project:
-      title: The project
-      facebook: Follow us on Facebook to get the news first!
+      title: "Mission : Open311 in Quebec"
       text: |
-        This year’s project will be annonced around 9:30, on February 20!
+        <p>Last year, our Iron Web teams used City data to build their applications.
+          This year, we plan to go a little further!</p>
+        <p>Team participants will allow you to send your own data to the City, thanks to <a href="http://open311.org/">Open311</a>,
+          a standard allowing cities to receive citizens’ requests (report graffiti or various damages, etc.).
+          At the outcome of the Iron Web event, attendees will have the tools to send their requests to
+          Ville de Québec directly from the Web.</p>
+        <p>Ville de Québec took inspiration from major cities like San Francisco, Chicago, Boston and several others,
+          and will soon become the first French-speaking city to implement an Open311 system.</p>
+        <p>This year, Ville de Québec therefore asked participants to develop a multiplatform Web application
+          (mobile, tablet, desktop) allowing citizens to send their requests directly to the Open311 system.</p>
     about:
       title: What’s the Iron Web?
       text: |
-        It's a competition that will immerse you into the world of a Web development team for
-        three consecutive days. Watch the two teams of professionals and students selected
-        through the Web as they compete to build the best application. This will be held
-        in parallel with the Web à Québec, at Espace 400e Bell.
+        <p>This is a 3-day competition held for a third year, in parallel with the
+          <a href="http://webaquebec.org">Web à Québec</a>.</p>
+        <p>The goal is to develop a Web application. Live from Espace 400e Bell, two teams will put
+          their imagination and talent to the test and meet the challenge.</p>
+        <p>Watch live as these two teams of six Web professionals (designers, integrators, programmers, etc.)
+          work hard to carry out their project, from design to production to delivery, and even public
+          presentation at the closing of the event.</p>
+        <p>This is a key event 24h/24h, starting Wednesday, February 20 at 10h00, where you’ll find out
+          how Web professionals are creative individuals enjoying a versatile career that’s not just about
+          typing on keyboards!</p>
     partners:
       title: Our partners
   roles:
@@ -65,5 +80,5 @@ en:
     <p>Made in the 3 days prior to the 72-hour Iron Web competition by
       <a target"_blank" href="https://github.com/j15e">Jean-Philippe Doyle</a>, head of Iron Web.</p>
   github: |
-    <p>If you discover any issue or would like to improve the Website, please open a
+    <p>If you discover any issue or would like to improve the website, please open a
       <a target"_blank" href="http://github.com/ironweb/ironweb-live">pull request</a>.</p>
