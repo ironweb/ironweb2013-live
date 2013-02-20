@@ -41,7 +41,7 @@ class Ironweb < Sinatra::Base
     css_compression :simple       # Optional
   }
   {:fr => '/', :en => '/en/'}.each do |locale, path|
-    @@channels = [:greens, :reds]
+    @@channels = [:greens, :reds, :special]
     @@channels.each do |channel|
       get "#{path}#{channel}" do
         set_locale locale
@@ -73,7 +73,8 @@ class Ironweb < Sinatra::Base
     @channels = @@channels
     @livestream_paths = {
       :reds => '1888101',
-      :greens => '1888141'
+      :greens => '1888141',
+      :special => '1897350'
     }
     @folks = {
       greens: {

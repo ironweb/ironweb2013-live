@@ -5,9 +5,10 @@ en:
   coming: "Coming soon!"
   meta:
     title: Iron Web 2013 at Web à Québec
-    watching: "Watch the %{team} team at Iron Web 2013!"
-    reds: Red
-    greens: Green
+    watching: "Watch the %{team} at Iron Web 2013!"
+    reds: Red team
+    greens: Green team
+    special: Special events
     description: |
       The Iron Web is a Web reality competition.
       Contestants have to build an awesome web app within 3 days, while you are watching!
@@ -36,6 +37,7 @@ en:
       title: The streams
       reds: Reds
       greens: Greens
+      special: Extras
     folks:
       title: The people
       contestants: The contestants
