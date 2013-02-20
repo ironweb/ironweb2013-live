@@ -96,6 +96,7 @@
       <div class="stream-wrap">
         <iframe src="http://new.livestream.com/accounts/75437/events/<%= @livestream_paths[params[:channel]] %>/feed_embed?width=960&height=480"
           width="960" height="480" frameborder="0" id="feed-embed-stand-alone"></iframe>
+          <script type="text/javascript" src="http://new.livestream.com/assets/plugins/feed-auto-grow.js"></script>
       </div>
       <div class="commits">
         <div class="title"><%= t 'commits_per_hour' %></div>
