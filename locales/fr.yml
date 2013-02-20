@@ -47,44 +47,43 @@ fr:
       title: "Mission : Open311 à Québec"
       facebook: Suivez-nous sur Facebook pour être les premiers informés !
       text: |
-        <p>L'an dernier, les équipes du Iron Web ont utilisé les données de la ville pour
-        réaliser leur application. Cette année, nous souhaitons aller un peu plus loin!</p>
+        <p>L'an dernier, les équipes du Iron Web ont utilisé les données de la Ville pour
+          réaliser leur application. Cette année, nous souhaitons aller un peu plus loin!</p>
         
-        <p>Les participants vont vous permettre d'envoyer vos données à la ville.</p>
-        
-        <p>Grâce à <a href="http://open311.org/">Open311</a>, un standard qui permet aux villes de recevoir des
-        demandes de la part des citoyens (signaler des graffitis, des bris divers, etc), 
-        vous pourrez à l'issu du Iron Web envoyer directement via le web des demandes
-        à la ville de Québec.
+        <p>Les équipes vous permettront même d'envoyer vos propres données à la Ville.
+          Grâce à <a href="http://open311.org/">Open311</a>, un standard qui permet aux villes de recevoir des
+          demandes de la part des citoyens (signaler des graffitis, des bris divers, etc.),
+          vous pourrez, à l'issu du Iron Web, envoyer des demandes
+          à la Ville de Québec directement via le web.
         </p>
         
-        <p>Implanté par San Francisco, Chicago, Boston et plusieurs autres grandes villes,
-        la Ville de Québec sera la première ville francophone à implanter le système.
+        <p>La Ville de Québec, s’inspirant de grandes villes comme San Francisco, Chicago, Boston
+          et plusieurs autres, sera la première ville francophone à implanter un système Open311.
         </p>
         
         <p>Cette année, la ville de Québec demande donc aux participants de réaliser une
-        application web multiplateforme (mobile, tablette, bureau) qui permettra
-        aux citoyens d'envoyer leurs demandes dans le système Open311.
+          application Web multiplateforme (mobile, tablette, bureau) qui permettra
+          aux citoyens d'envoyer leurs demandes dans le système Open311.
         </p>
         
         <p>De plus, la meilleure plateforme sera reprise par le
-        département des technologies de la ville de Québec pour réaliser
-        l'application officielle de la ville. Elle sera également mise libre de droits
-        sous licence MIT afin de permettre à d'autres villes de l'utiliser.</p>
+          département des technologies de la Ville de Québec pour réaliser
+          l'application officielle de la ville. Elle sera également mise libre de droits
+          sous licence MIT afin de permettre à d'autres villes de l'utiliser.</p>
     about:
       title: Le Iron Web, c’est quoi ?
       text: |
-        <p>C'est une compétition de 3 jours qui se tient pour une troisième année en parallèle 
-          du <a href="http://webaquebec.org">Web à Québec</a>.
-        <p>L’objectif : développer une application web. En direct de l’Espace 400e Bell, deux équipes
+        <p>C'est une compétition de 3 jours qui se tient pour une troisième année, en parallèle avec le
+        <a href="http://webaquebec.org">Web à Québec</a>.
+        <p>L’objectif : développer une application Web. En direct de l’Espace 400e Bell, deux équipes
           mettront leur imagination et leur talent à l’épreuve pour relever ce défi.</p>
-        <p>Visionnez en direct le travail des 2 équipes de 6 professionnels de
-          différents métiers du web (designer, intégrateurs, programmeurs, etc) réaliser leur
-          projet de la conception à la production jusqu'à la livraison et même la présentation
-          au public lors de la clôture du WAQ.</p>
-        <p>C'est un rendez-vous, 24h sur 24h, à partir de mercredi le 20 février 10h00 pour
-          découvrir en quoi les professionnels du web font un métier créatif et diversifié qui
-          ne se limite pas à taper sur des claviers!</p>
+        <pVisionnez en direct le travail de ces 2 équipes de 6 professionnels des
+          métiers du Web (designers, intégrateurs, programmeurs, etc.)
+          réaliser leur projet, de la conception à la production, jusqu'à la livraison et
+          à la présentation au public lors de la clôture du WAQ. </p>
+        <p>C'est un rendez-vous 24&nbsp;h sur 24&nbsp;h, à partir du mercredi 20 février à 10&nbsp;h&nbsp;00, pour
+          découvrir en quoi les professionnels du Web font un métier créatif et diversifié qui
+          ne se limite pas qu’à taper sur des claviers!</p>
     partners:
       title: Nos partenaires
   roles:
