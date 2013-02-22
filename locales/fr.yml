@@ -19,6 +19,9 @@ fr:
     event2:
       time: Mercredi 10h00
       title: Début de la diffusion
+    event3:
+      time: Vendredi 14h45
+      title: Présentation des projets
   nav:
     contact: "@ironweb2013"
   headlines:

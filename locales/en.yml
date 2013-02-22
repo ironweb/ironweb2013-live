@@ -25,6 +25,9 @@ en:
     event2:
       time: Wednesday 10:00
       title: Live streaming start
+    event3:
+      time: Friday 14:45
+      title: Projects presentations
   sections:
     medias:
       title: Photos and videos
