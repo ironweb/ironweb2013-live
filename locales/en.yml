@@ -28,6 +28,9 @@ en:
     event3:
       time: Friday 14:45
       title: Projects presentations
+    event4:
+      time: Friday
+      title: Awards. <br/><br/>After the closing conference, exact time unknown, stay tuned on Extra!
   sections:
     medias:
       title: Photos and videos

@@ -22,6 +22,9 @@ fr:
     event3:
       time: Vendredi 14h45
       title: Présentation des projets
+    event4:
+      time: Vendredi
+      title: Remise des prix. <br/><br/>Après la conférence de clôture, heure exacte inconnue, restez connecté sur Extra!
   nav:
     contact: "@ironweb2013"
   headlines:
