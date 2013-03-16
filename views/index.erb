@@ -98,11 +98,13 @@
           width="100%" height="360" frameborder="0" id="feed-embed-stand-alone"></iframe>
           <script type="text/javascript" src="http://new.livestream.com/assets/plugins/feed-auto-grow.js"></script>
       </div>
+      <% if !@commitsData[params[:channel]].nil? %>
       <div class="commits">
         <div class="title"><%= t 'commits_per_hour' %></div>
         <div id="commits-chart"></div>
       </div>
       <p class="commits-about"><%= t 'commits_about' %></p>
+      <% end %>
     </section>
     <section class="feed">
       <div class="half-block" id="medias">
