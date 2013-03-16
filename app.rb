@@ -200,7 +200,7 @@ class Ironweb < Sinatra::Base
         user, repo = details
         team_hours = []
         commits = github.repos.commits.all(user, repo, since: tsince, until: tuntil)
-        commits.map! do |reponse|
+        commits.each do |reponse|
           # require 'debugger'
           # debugger
           if reponse.commit.committer
