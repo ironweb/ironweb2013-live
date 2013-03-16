@@ -56,7 +56,7 @@ class Ironweb < Sinatra::Base
     get path do
       set_locale locale
       @title = t 'meta.title'
-      params[:channel] ||= @@channels.sample
+      params[:channel] ||= :greens
       set_data
       erb :index
     end
