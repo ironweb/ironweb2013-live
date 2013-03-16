@@ -1,4 +1,5 @@
 en:
+  winners: "Winners!"
   commits_per_hour: Commits / hour
   commits_about: "Commits : contribution made by team developers to the source code sent to <a href=\"http://github.com\">Github</a> servers."
   unavailable: Unavailable.
