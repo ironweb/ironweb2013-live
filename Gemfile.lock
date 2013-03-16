@@ -5,10 +5,24 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.3)
+    aws-sdk (1.8.5)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     backports (3.1.1)
     bourbon (3.1.1)
       sass (>= 3.2.0)
       thor
+    capistrano (2.14.2)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capistrano-s3 (0.2.5)
+      aws-sdk
+      capistrano
+      mime-types
     columnize (0.3.6)
     daemons (1.1.9)
     debugger (1.5.0)
@@ -29,6 +43,7 @@ GEM
       nokogiri (~> 1.5.2)
       oauth2
     hashie (2.0.2)
+    highline (1.6.15)
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -44,12 +59,22 @@ GEM
       addressable (~> 2.2)
       faraday (~> 0.8)
       multi_json (~> 1.3)
+    mime-types (1.21)
+    monkey-lib (0.5.4)
+      backports
     multi_json (1.7.0)
     multi_xml (0.5.3)
     multipart-post (1.2.0)
     neat (1.2.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
+    net-scp (1.1.0)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.6)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.5.6)
     oauth (0.4.7)
     oauth2 (0.9.1)
@@ -71,6 +96,10 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
+    sinatra-advanced-routes (0.5.2)
+      monkey-lib (~> 0.5.0)
+      sinatra (~> 1.0)
+      sinatra-sugar (~> 0.5.0)
     sinatra-assetpack (0.1.7)
       jsmin
       rack-test
@@ -83,6 +112,15 @@ GEM
       rack-test
       sinatra (~> 1.3.0)
       tilt (~> 1.3)
+    sinatra-export (0.9.5)
+      rack
+      sinatra
+      sinatra-advanced-routes
+      term-ansicolor
+    sinatra-sugar (0.5.1)
+      monkey-lib (~> 0.5.0)
+      sinatra (~> 1.0)
+    term-ansicolor (1.1.1)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -94,6 +132,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.3)
     vimeo (1.5.3)
       httparty (>= 0.4.5)
       httpclient (>= 2.1.5.2)
@@ -107,6 +146,8 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   bourbon
+  capistrano
+  capistrano-s3
   debugger
   foreman
   github_api
@@ -116,8 +157,10 @@ DEPENDENCIES
   rake
   sass
   sinatra
+  sinatra-advanced-routes
   sinatra-assetpack
   sinatra-contrib
+  sinatra-export
   thin
   tzinfo
   unicorn

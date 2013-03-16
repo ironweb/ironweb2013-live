@@ -13,6 +13,8 @@ gem 'sinatra'
 gem 'sinatra-contrib',
   :require => 'sinatra/reloader'
 gem 'sinatra-assetpack'
+gem 'sinatra-advanced-routes'
+gem 'sinatra-export'
 gem 'rake'
 gem 'sass'
 gem 'i18n'
@@ -30,4 +32,9 @@ gem 'github_api'
 
 group :development do
   gem 'debugger'
+end
+
+group :deploy do
+  gem 'capistrano'
+  gem 'capistrano-s3'
 end

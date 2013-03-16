@@ -1,3 +1,6 @@
 .DS_Store
 .sass-cache/*
 .env
+config/s3.yml
+public/index.html
+public/**/*

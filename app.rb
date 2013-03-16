@@ -10,6 +10,7 @@ class Ironweb < Sinatra::Base
   set :root, File.dirname(__FILE__)
 
   register Sinatra::AssetPack
+  register Sinatra::AdvancedRoutes
   register Sinatra::Reloader if development?
 
   helpers do
