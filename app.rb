@@ -169,7 +169,7 @@ class Ironweb < Sinatra::Base
       end
     end
 
-    @commitsData = cache.fetch('commits', :expire_in => 60 * 60) do
+    @commitsData = cache.fetch('commits', :expire_in => 1) do
       hours = {}
       cstart = Date.new(2013, 2, 19)
       cend = Date.new(2013, 2, 23)
@@ -199,20 +199,23 @@ class Ironweb < Sinatra::Base
       @github_paths.each do |channel, details|
         user, repo = details
         team_hours = []
-        commits = github.repos.commits.all(user, repo, since: tsince, until: tuntil)
-        commits.each do |reponse|
-          # require 'debugger'
-          # debugger
-          if reponse.commit.committer
-            time = reponse.commit.committer.date
-          else
-            time = reponse.commit.author.date
-          end
-          hour = ((Time.parse(time).localtime - Time.now)/60/60).round * -1
-          if team_hours[hour].nil?
-            team_hours[hour] = 1
-          else
-            team_hours[hour] = team_hours[hour] + 1
+        commits = github.repos.commits.all(user, repo,
+          since: tsince.iso8601,
+          until: tuntil.iso8601,
+          per_page: 100)
+        commits.each_page do |page|
+          page.each do |reponse|
+            if reponse.commit.committer
+              time = reponse.commit.committer.date
+            else
+              time = reponse.commit.author.date
+            end
+            hour = ((Time.parse(time).localtime - tuntil.to_time)/60/60).round * -1
+            if team_hours[hour].nil?
+              team_hours[hour] = 1
+            else
+              team_hours[hour] = team_hours[hour] + 1
+            end
           end
         end
         team_hours.fill { |i| team_hours[i] || 0 }
