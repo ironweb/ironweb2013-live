@@ -177,10 +177,11 @@ class Ironweb < Sinatra::Base
       if Time.now > cstart
         tsince = cstart
         tuntil = cend
-        @github_paths = {
-          :reds => ['ironweb', 'rouges'],
-          :greens => ['ironweb', 'verts-frontend'],
-        }
+        @github_paths = [
+          [:reds, 'ironweb', 'rouges'],
+          [:greens, 'ironweb', 'verts-frontend'],
+          [:greens, 'ironweb', 'verts-backend']
+        ]
       # Before competition start, last 72 hours commits in this repo
       else
         @github_paths = {
@@ -196,9 +197,9 @@ class Ironweb < Sinatra::Base
         config.adapter     = :net_http
         config.ssl         = {:verify => false} if development?
       end
-      @github_paths.each do |channel, details|
-        user, repo = details
-        team_hours = []
+      @github_paths.each do |channel, user, repo|
+        hours[channel] = { data: [] } if hours[channel].nil?
+        hours[channel][:color] = '#95b1bd'
         commits = github.repos.commits.all(user, repo,
           since: tsince.iso8601,
           until: tuntil.iso8601,
@@ -211,18 +212,18 @@ class Ironweb < Sinatra::Base
               time = reponse.commit.author.date
             end
             hour = ((Time.parse(time).localtime - tuntil.to_time)/60/60).round * -1
-            if team_hours[hour].nil?
-              team_hours[hour] = 1
+            if hours[channel][:data][hour].nil?
+              hours[channel][:data][hour] = 1
             else
-              team_hours[hour] = team_hours[hour] + 1
+              hours[channel][:data][hour] = hours[channel][:data][hour] + 1
             end
           end
         end
-        team_hours.fill { |i| team_hours[i] || 0 }
-        hours[channel] = [{
-          color: '#95b1bd',
-          data: team_hours.reverse
-        }]
+      end
+      hours.each do |channel, values|
+        values[:data].fill { |i| values[:data][i] || 0 }
+        values[:data].reverse
+        hours[channel] = [values]
       end
       hours
     end
