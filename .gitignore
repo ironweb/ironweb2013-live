@@ -4,3 +4,4 @@
 config/s3.yml
 public/index.html
 public/**/*
+.last_published
