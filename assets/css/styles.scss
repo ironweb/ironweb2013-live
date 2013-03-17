@@ -310,6 +310,12 @@ section.folks {
   }
 }
 
+.follow-up {
+  h3 {
+    text-align: left;
+  }
+}
+
 .contestants {
   @include row(block);
   margin-bottom: $baseMargin * 4;

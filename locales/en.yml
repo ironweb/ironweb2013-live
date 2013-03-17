@@ -45,6 +45,8 @@ en:
       reds: Reds
       greens: Greens
       special: Extras
+    results:
+      title: Results
     folks:
       title: The people
       contestants: The contestants
@@ -52,6 +54,8 @@ en:
       greens: The greens
       jury: The jury
       from_bordeaux: from Bordeaux, France
+      jury_results: Results
+      jury_results_download: Download jury notes and comments (pdf)
     project:
       title: "Connect the city and the citizens"
       text: |

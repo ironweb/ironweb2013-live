@@ -46,6 +46,7 @@
         <a href="#events"><%= t 'sections.events.title' %></a>
         <a href="#medias"><%= t 'sections.medias.menu_title' %></a>
         <a href="#folks"><%= t 'sections.folks.title' %></a>
+        <a href="#results"><%= t 'sections.results.title' %></a>
         <% if ENV['SHOW_PARTNERS'] %>
         <a href="#partners"><%= t 'sections.partners.title' %></a>
         <% end %>
@@ -191,6 +192,10 @@
           <p><a target="_blank" href="http://twitter.com/palalonde">@palalonde</a></p>
         </div>
       </div>
+    </section>
+    <section id="results" class="follow-up">
+      <h3><%= t 'sections.folks.jury_results' %></h3>
+      <p><a href="/docs/jury-notes.pdf"><%= t 'sections.folks.jury_results_download' %></a></p>
     </section>
     <% if ENV['SHOW_PARTNERS'] %>
     <section class="partners" id="partners">

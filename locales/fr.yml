@@ -45,6 +45,8 @@ fr:
       reds: Rouges
       greens: Verts
       special: Extras
+    results:
+      title: Résultats
     folks:
       title: Les gens
       contestants: Les participants
@@ -52,6 +54,8 @@ fr:
       greens: Les Verts
       jury: Les juges
       from_bordeaux: de Bordeaux, France
+      jury_results: Résultats
+      jury_results_download: Téléchagez les notes et commentaires des juges (pdf)
     project:
       title: "Connecter le citoyen et la ville"
       text: |

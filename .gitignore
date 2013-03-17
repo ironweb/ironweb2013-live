@@ -3,5 +3,12 @@
 .env
 config/s3.yml
 public/index.html
-public/**/*
+public/css/
+public/js/
+public/fonts/
+public/img/
+public/en/
+public/special/
+public/reds/
+public/greens/
 .last_published
