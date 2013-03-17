@@ -212,7 +212,7 @@ class Ironweb < Sinatra::Base
             else
               time = reponse.commit.author.date
             end
-            hour = ((Time.parse(time).localtime - tuntil.to_time)/60/60).round * -1
+            hour = ((Time.parse(time).localtime - tuntil.to_time)/60/60).round.abs
             if hours[channel][:data][hour].nil?
               hours[channel][:data][hour] = 1
             else
