@@ -9,7 +9,6 @@ set :bucket_write_options, {
 }
 
 before 'deploy' do
-  run_locally "rm -rf public/*"
-  run_locally "export RACK_ENV=production && bundle exec rake sinatra:export"
-  run_locally "export RACK_ENV=production && bundle exec rake assetpack:build"
+  run_locally "bundle exec foreman run rake sinatra:export RACK_ENV=production"
+  run_locally "bundle exec foreman run rake assetpack:build RACK_ENV=production"
 end
