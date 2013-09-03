@@ -157,7 +157,7 @@ class Ironweb < Sinatra::Base
     }
     @videos = cache.fetch('videos', :expires_in => 60 * 30) do
       rescue_array do
-        Vimeo::Simple::User.videos('webaquebec').parsed_response
+        Vimeo::Simple::User.videos('quebecnumerique').parsed_response
       end
     end
 
