@@ -11,7 +11,8 @@ class Ironweb < Sinatra::Base
 
   register Sinatra::AssetPack
   register Sinatra::AdvancedRoutes
-  register Sinatra::Reloader if development?
+  register Sinatra::Export
+  register Sinatra::Reloader if settings.development?
 
   helpers do
     def t(*args)
@@ -66,7 +67,7 @@ class Ironweb < Sinatra::Base
 
   def set_locale locale
     I18n.locale = locale
-    I18n.reload! if development?
+    I18n.reload! if settings.development?
     params[:locale] = locale
   end
 
@@ -160,7 +161,7 @@ class Ironweb < Sinatra::Base
       end
     end
 
-    Koala.http_service.http_options = {:ssl => { :verify => false }} if development?
+    Koala.http_service.http_options = {:ssl => { :verify => false }} if settings.development?
     @photos = cache.fetch('photos', :expire_in => 60 * 5) do
       rescue_array do
         oauth = @oauth = Koala::Facebook::OAuth.new(ENV['FB_APP_ID'], ENV['FB_APP_SECRET'])
@@ -196,7 +197,7 @@ class Ironweb < Sinatra::Base
         config.endpoint    = 'https://api.github.com'
         config.oauth_token = ENV['GITHUB_TOKEN']
         config.adapter     = :net_http
-        config.ssl         = {:verify => false} if development?
+        config.ssl         = {:verify => false} if settings.development?
       end
       @github_paths.each do |channel, user, repo|
         hours[channel] = { data: [] } if hours[channel].nil?
